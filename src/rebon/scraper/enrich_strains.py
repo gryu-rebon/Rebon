@@ -54,33 +54,41 @@ UPDATE_ALWAYS = {"evidence_tier", "key_rcts", "notes", "conditions"}
 
 # ── PubMed helpers ─────────────────────────────────────────────────────────────
 
+def _ncbi_get(url: str, params: dict, retries: int = 3, as_json: bool = True):
+    """GET from NCBI with retry on 5xx errors."""
+    for attempt in range(retries):
+        try:
+            r = requests.get(url, params=params, timeout=15)
+            r.raise_for_status()
+            return r.json() if as_json else r.text
+        except requests.exceptions.HTTPError:
+            if r.status_code >= 500 and attempt < retries - 1:
+                wait = 2 ** attempt
+                print(f"    NCBI {r.status_code} — retrying in {wait}s...")
+                time.sleep(wait)
+            else:
+                raise
+
+
 def pubmed_search(strain_name: str, extra_terms: str = "", n: int = PUBMED_MAX_RESULTS) -> list[str]:
     """Return up to n PMIDs for clinical/review studies on this strain."""
-    # Use genus + species (first two words) as the core query
     species = " ".join(strain_name.split()[:2])
-    base = f'("{species}"[Title/Abstract]) AND probiotic[Title/Abstract]'
+    base = f'"{species}"[Title/Abstract] AND probiotic[Title/Abstract]'
     clinical = '(randomized[Title/Abstract] OR "clinical trial"[pt] OR "systematic review"[pt] OR "meta-analysis"[pt])'
     query = f"{base} AND {clinical}"
     if extra_terms:
         query = f'({query}) AND ({extra_terms})'
 
-    params = {
-        "db": "pubmed", "term": query,
-        "retmax": n, "retmode": "json", "sort": "relevance",
-    }
+    params = {"db": "pubmed", "term": query, "retmax": n, "retmode": "json", "sort": "relevance"}
     if NCBI_API_KEY:
         params["api_key"] = NCBI_API_KEY
 
-    r = requests.get(NCBI_ESEARCH, params=params, timeout=15)
-    r.raise_for_status()
-    ids = r.json()["esearchresult"]["idlist"]
+    ids = _ncbi_get(NCBI_ESEARCH, params)["esearchresult"]["idlist"]
 
-    # If no clinical hits, fall back to broader search (any article type)
+    # Fall back to broader search if no clinical hits
     if not ids:
         params["term"] = f'"{species}"[Title/Abstract] AND probiotic[Title/Abstract]'
-        r = requests.get(NCBI_ESEARCH, params=params, timeout=15)
-        r.raise_for_status()
-        ids = r.json()["esearchresult"]["idlist"]
+        ids = _ncbi_get(NCBI_ESEARCH, params)["esearchresult"]["idlist"]
 
     return ids
 
@@ -95,9 +103,7 @@ def pubmed_fetch_abstracts(pmids: list[str]) -> str:
     }
     if NCBI_API_KEY:
         params["api_key"] = NCBI_API_KEY
-    r = requests.get(NCBI_EFETCH, params=params, timeout=20)
-    r.raise_for_status()
-    return r.text
+    return _ncbi_get(NCBI_EFETCH, params, as_json=False)
 
 
 # ── LLM extraction ─────────────────────────────────────────────────────────────
@@ -167,7 +173,7 @@ def enrich_strain(
     dry_run: bool = False,
     update: bool = False,
     extra_search: str = "",
-    model: str = OLLAMA_MODEL,
+    model: str = DEFAULT_MODEL,
 ) -> dict:
     name = strain.get("name", strain["id"])
     designation = strain.get("strain_designation") or ""
