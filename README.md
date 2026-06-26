@@ -51,26 +51,3 @@ uvicorn src.rebon.api.main:app --reload --port 8000
 ```
 
 Open [http://localhost:8000](http://localhost:8000). The **Strains** tab is live; Recommender, Products, and Conditions tabs are placeholders.
-
-## Enriching strains
-
-Strain data lives in `data/strains.json`. The enrichment script pulls PubMed abstracts for each strain and uses Ollama to extract structured fields.
-
-```bash
-# Enrich all unenriched strains (default)
-python3 -m rebon.scraper.enrich_strains
-
-# Re-enrich a specific strain
-python3 -m rebon.scraper.enrich_strains --id akkermansia_muciniphila
-
-# Re-enrich everything (overwrite existing)
-python3 -m rebon.scraper.enrich_strains --all
-
-# Preview without writing
-python3 -m rebon.scraper.enrich_strains --dry-run
-
-# Use a different model
-python3 -m rebon.scraper.enrich_strains --model llama3.2:3b
-```
-
-Enrichment requires Ollama running with `llama3.1:8b`. The script retries NCBI requests automatically on transient errors.
