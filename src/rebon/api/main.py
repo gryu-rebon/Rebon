@@ -20,7 +20,8 @@ from fastapi.responses import HTMLResponse
 
 from rebon.db.chroma import get_client, EMBEDDING_FN  # noqa: E402
 
-STRAINS_PATH = Path(__file__).parents[3] / "data" / "strains.json"
+STRAINS_PATH   = Path(__file__).parents[3] / "data" / "strains.json"
+PRODUCTS_PATH  = Path(__file__).parents[3] / "data" / "products.json"
 
 
 def get_db_strain_ids() -> set[str]:
@@ -70,6 +71,41 @@ def strains(q: Optional[str] = Query(default=None)):
         all_strains = [s for s in all_strains if matches(s)]
 
     return {"strains": all_strains, "total": len(all_strains)}
+
+
+@app.get("/products")
+def products(q: Optional[str] = Query(default=None)):
+    with open(PRODUCTS_PATH) as f:
+        brands = json.load(f)
+
+    # Flatten brand → products, injecting brand fields into each product
+    flat = []
+    for brand_entry in brands:
+        for p in brand_entry.get("products", []):
+            item = {
+                "brand": brand_entry.get("brand"),
+                "market_name": brand_entry.get("market_name"),
+                **p,
+            }
+            flat.append(item)
+
+    if q:
+        ql = q.lower()
+        def matches(p):
+            searchable = " ".join([
+                p.get("brand") or "",
+                p.get("market_name") or "",
+                p.get("name") or "",
+                p.get("form") or "",
+                p.get("dsld_product_name") or "",
+                " ".join(
+                    s.get("name", "") for s in (p.get("probiotic_strains") or [])
+                ),
+            ]).lower()
+            return ql in searchable
+        flat = [p for p in flat if matches(p)]
+
+    return {"products": flat, "total": len(flat)}
 
 
 # ── Web UI ─────────────────────────────────────────────────────────────────────
@@ -232,9 +268,7 @@ HTML = """<!DOCTYPE html>
     <button class="tab-btn" onclick="switchTab('recommender', this)">
       Recommender <span class="coming">soon</span>
     </button>
-    <button class="tab-btn" onclick="switchTab('products', this)">
-      Products <span class="coming">soon</span>
-    </button>
+    <button class="tab-btn" onclick="switchTab('products', this)">Products</button>
     <button class="tab-btn active" onclick="switchTab('strains', this)">Strains</button>
     <button class="tab-btn" onclick="switchTab('conditions', this)">
       Conditions <span class="coming">soon</span>
@@ -251,12 +285,65 @@ HTML = """<!DOCTYPE html>
   </div>
 </div>
 
-<!-- ── PRODUCTS (placeholder) ── -->
+<!-- ── PRODUCTS ── -->
 <div class="page" id="tab-products">
-  <div class="coming-soon">
-    <div class="cs-icon">📦</div>
-    <h2>Products coming soon</h2>
-    <p>Product catalog will appear here once product data is scraped and ingested.</p>
+  <div class="toolbar">
+    <div class="search-wrap">
+      <span class="icon">🔍</span>
+      <input type="text" id="productsSearch" placeholder="Search by brand, product name, strain…" oninput="onProductSearch(this.value)">
+    </div>
+    <span class="count" id="productsCount"></span>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th onclick="productSortBy('market_name')" id="pth-market_name">Brand <i class="sort-arrow"></i></th>
+          <th onclick="productSortBy('name')" id="pth-name">Product <i class="sort-arrow"></i></th>
+          <th onclick="productSortBy('form')" id="pth-form">Form <i class="sort-arrow"></i></th>
+          <th onclick="productSortBy('serving_size')" id="pth-serving_size">Serving <i class="sort-arrow"></i></th>
+          <th onclick="productSortBy('total_cfu_billion')" id="pth-total_cfu_billion">Total CFU <i class="sort-arrow"></i></th>
+          <th>Strains</th>
+          <th>Source</th>
+          <th onclick="productSortBy('_enriched')" id="pth-_enriched">Enriched <i class="sort-arrow"></i></th>
+        </tr>
+        <tr>
+          <th class="filter-row"><input id="pcf-brand"   placeholder="filter…" oninput="applyProductFilters()"></th>
+          <th class="filter-row"><input id="pcf-name"    placeholder="filter…" oninput="applyProductFilters()"></th>
+          <th class="filter-row">
+            <select id="pcf-form" onchange="applyProductFilters()">
+              <option value="">all</option>
+              <option value="Capsule">Capsule</option>
+              <option value="Tablet">Tablet</option>
+              <option value="Powder">Powder</option>
+              <option value="Liquid">Liquid</option>
+              <option value="Gummi">Gummy</option>
+            </select>
+          </th>
+          <th class="filter-row"><input id="pcf-serving" placeholder="filter…" oninput="applyProductFilters()"></th>
+          <th class="filter-row"><input id="pcf-cfu"     placeholder="e.g. 10" oninput="applyProductFilters()"></th>
+          <th class="filter-row"><input id="pcf-strain"  placeholder="filter…" oninput="applyProductFilters()"></th>
+          <th class="filter-row">
+            <select id="pcf-source" onchange="applyProductFilters()">
+              <option value="">all</option>
+              <option value="dsld">DSLD</option>
+              <option value="iherb">iHerb</option>
+              <option value="amazon">Amazon</option>
+            </select>
+          </th>
+          <th class="filter-row">
+            <select id="pcf-enriched" onchange="applyProductFilters()">
+              <option value="">all</option>
+              <option value="yes">yes</option>
+              <option value="no">no</option>
+            </select>
+          </th>
+        </tr>
+      </thead>
+      <tbody id="productsBody">
+        <tr><td colspan="8" class="no-results">Loading…</td></tr>
+      </tbody>
+    </table>
   </div>
 </div>
 
@@ -556,8 +643,202 @@ function closePanel() {
 
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closePanel(); });
 
+// ── Products state ─────────────────────────────────────────────────────────────
+let allProducts = [];
+let filteredProducts = [];
+let productSort = null;
+let productSortDir = 1;
+let productSearchTimeout = null;
+
+async function loadProducts() {
+  const res = await fetch('/products');
+  const data = await res.json();
+  allProducts = data.products;
+  applyProductFilters();
+}
+
+function pColFilter(id) {
+  return (document.getElementById(id)?.value || '').trim().toLowerCase();
+}
+
+function applyProductFilters(q = document.getElementById('productsSearch').value.trim()) {
+  let result = allProducts;
+
+  if (q) {
+    const ql = q.toLowerCase();
+    result = result.filter(p => [
+      p.brand, p.market_name, p.name, p.form, p.dsld_product_name,
+      ...(p.probiotic_strains || []).map(s => s.name),
+    ].join(' ').toLowerCase().includes(ql));
+  }
+
+  const fBrand   = pColFilter('pcf-brand');
+  const fName    = pColFilter('pcf-name');
+  const fForm    = pColFilter('pcf-form');
+  const fServing = pColFilter('pcf-serving');
+  const fCfu     = pColFilter('pcf-cfu');
+  const fStrain  = pColFilter('pcf-strain');
+  const fSource  = pColFilter('pcf-source');
+  const fEnriched = pColFilter('pcf-enriched');
+
+  if (fBrand)   result = result.filter(p => (p.market_name || p.brand || '').toLowerCase().includes(fBrand));
+  if (fName)    result = result.filter(p => (p.name || '').toLowerCase().includes(fName));
+  if (fForm)    result = result.filter(p => (p.form || '').toLowerCase().includes(fForm));
+  if (fServing) result = result.filter(p => (p.serving_size || '').toLowerCase().includes(fServing));
+  if (fCfu)     result = result.filter(p => (p.total_cfu_billion || 0) >= parseFloat(fCfu) || 0);
+  if (fStrain)  result = result.filter(p => (p.probiotic_strains || []).some(s => s.name.toLowerCase().includes(fStrain)));
+  if (fSource)  result = result.filter(p => Object.keys(p.detail_sources || {}).includes(fSource));
+  if (fEnriched) {
+    const want = fEnriched === 'yes';
+    result = result.filter(p => !!p.detail_sources === want);
+  }
+
+  if (productSort) {
+    result = [...result].sort((a, b) => {
+      let av = productSort === '_enriched' ? (a.detail_sources ? 1 : 0)
+             : productSort === 'total_cfu_billion' ? (a.total_cfu_billion || 0)
+             : (a[productSort] || '').toString().toLowerCase();
+      let bv = productSort === '_enriched' ? (b.detail_sources ? 1 : 0)
+             : productSort === 'total_cfu_billion' ? (b.total_cfu_billion || 0)
+             : (b[productSort] || '').toString().toLowerCase();
+      return av < bv ? -productSortDir : av > bv ? productSortDir : 0;
+    });
+  }
+
+  filteredProducts = result;
+  renderProductsTable();
+}
+
+function onProductSearch(val) {
+  clearTimeout(productSearchTimeout);
+  productSearchTimeout = setTimeout(() => applyProductFilters(val.trim()), 200);
+}
+
+function productSortBy(col) {
+  if (productSort === col) productSortDir *= -1;
+  else { productSort = col; productSortDir = 1; }
+  document.querySelectorAll('th[id^="pth-"]').forEach(th => th.classList.remove('sort-asc', 'sort-desc'));
+  const th = document.getElementById('pth-' + col);
+  if (th) th.classList.add(productSortDir === 1 ? 'sort-asc' : 'sort-desc');
+  applyProductFilters();
+}
+
+function sourceTags(detail_sources) {
+  if (!detail_sources) return '<span class="chip chip-gray">—</span>';
+  return Object.keys(detail_sources).map(s => {
+    const cls = s === 'dsld' ? 'chip-green' : s === 'iherb' ? 'chip-blue' : 'chip-gray';
+    return `<span class="chip ${cls}">${s.toUpperCase()}</span>`;
+  }).join(' ');
+}
+
+function renderProductsTable() {
+  const tbody = document.getElementById('productsBody');
+  const n = filteredProducts.length;
+  document.getElementById('productsCount').textContent = n + ' product' + (n !== 1 ? 's' : '');
+
+  if (!n) {
+    tbody.innerHTML = '<tr><td colspan="8" class="no-results">No products match.</td></tr>';
+    return;
+  }
+
+  tbody.innerHTML = filteredProducts.map((p, i) => {
+    const strainChips = (p.probiotic_strains || []).slice(0, 2)
+      .map(s => `<span class="chip chip-blue" title="${s.name}">${s.name.split(' ').slice(0,2).join(' ')}</span>`).join('')
+      + (( p.probiotic_strains?.length || 0) > 2
+          ? `<span class="chip chip-gray">+${p.probiotic_strains.length - 2}</span>` : '');
+
+    const enrichedBadge = p.detail_sources
+      ? `<span class="chip chip-green">✓ yes</span>`
+      : `<span class="chip chip-gray">— no</span>`;
+
+    const cfu = p.total_cfu_billion != null ? p.total_cfu_billion + 'B' : '—';
+
+    return `<tr onclick="openProductDetail(${i})">
+      <td style="font-weight:600;white-space:nowrap">${p.market_name || p.brand || '—'}</td>
+      <td style="max-width:300px;font-size:12px">${p.name || '—'}</td>
+      <td style="font-size:12px;white-space:nowrap">${p.form || '—'}</td>
+      <td style="font-size:12px;color:#555;white-space:nowrap">${p.serving_size || '—'}</td>
+      <td style="font-size:12px;white-space:nowrap">${cfu}</td>
+      <td><div class="chips">${strainChips || '—'}</div></td>
+      <td><div class="chips">${sourceTags(p.detail_sources)}</div></td>
+      <td>${enrichedBadge}</td>
+    </tr>`;
+  }).join('');
+}
+
+function openProductDetail(idx) {
+  document.querySelectorAll('#productsBody tr.selected').forEach(r => r.classList.remove('selected'));
+  document.querySelectorAll('#productsBody tr')[idx]?.classList.add('selected');
+
+  const p = filteredProducts[idx];
+  document.getElementById('panelTitle').textContent = p.name || '—';
+  document.getElementById('panelSubtitle').textContent = p.market_name || p.brand || '';
+
+  const row = (label, v) =>
+    `<div class="detail-row"><span class="detail-label">${label}</span><span class="detail-value">${v ?? '—'}</span></div>`;
+
+  const factRows = (p.supplement_facts || []).map(f =>
+    `<div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid #f5f5f5;font-size:12px">
+      <span style="color:#444;flex:1">${f.name}</span>
+      <span style="color:#888;white-space:nowrap;margin-left:12px">${f.amount || '—'}</span>
+    </div>`
+  ).join('');
+
+  const strainRows = (p.probiotic_strains || []).map(s =>
+    `<div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid #f5f5f5;font-size:12px">
+      <span style="color:#15803d;font-style:italic;flex:1">${s.name}</span>
+      <span style="color:#888;white-space:nowrap;margin-left:12px">${s.amount || '—'}${s.cfu_billion != null ? ' (' + s.cfu_billion + 'B CFU)' : ''}</span>
+    </div>`
+  ).join('');
+
+  const sourceKeys = Object.keys(p.detail_sources || {});
+  const sourceDetail = sourceKeys.map(src => {
+    const fields = (p.detail_sources[src] || []).join(', ');
+    return `<div class="detail-row"><span class="detail-label">${src.toUpperCase()}</span><span class="detail-value mono" style="font-size:11px">${fields}</span></div>`;
+  }).join('');
+
+  document.getElementById('panelBody').innerHTML = `
+    <div class="detail-section">
+      <div class="detail-section-title">Product Info</div>
+      ${row('Brand', p.market_name || p.brand)}
+      ${row('Form', p.form)}
+      ${row('Serving size', p.serving_size)}
+      ${row('Servings / container', p.servings_per_container)}
+      ${row('Net content', p.net_content)}
+      ${p.total_cfu_billion != null ? row('Total CFU', p.total_cfu_billion + ' Billion') : ''}
+    </div>
+    ${strainRows ? `<div class="detail-section">
+      <div class="detail-section-title">Probiotic Strains (${(p.probiotic_strains || []).length})</div>
+      ${strainRows}
+    </div>` : ''}
+    ${factRows ? `<div class="detail-section">
+      <div class="detail-section-title">Supplement Facts (${(p.supplement_facts || []).length})</div>
+      ${factRows}
+    </div>` : ''}
+    <div class="detail-section">
+      <div class="detail-section-title">Source</div>
+      ${row('Original source', p.source)}
+      ${p.url && p.url !== 'https://www.iherb.com/New-Products' ? `<div class="detail-row"><span class="detail-label">URL</span><a href="${p.url}" target="_blank" style="font-size:12px;color:#1d4ed8;word-break:break-all">${p.url}</a></div>` : ''}
+      ${p.dsld_id ? row('DSLD ID', `<span class="detail-value mono">${p.dsld_id}</span>`) : ''}
+      ${p.dsld_product_name ? row('DSLD name', p.dsld_product_name) : ''}
+    </div>
+    ${sourceDetail ? `<div class="detail-section">
+      <div class="detail-section-title">Data Sources</div>
+      ${sourceDetail}
+    </div>` : ''}
+    ${p.description ? `<div class="detail-section">
+      <div class="detail-section-title">Description</div>
+      <div style="font-size:13px;line-height:1.65;color:#555">${p.description}</div>
+    </div>` : ''}
+  `;
+
+  document.getElementById('overlay').classList.add('open');
+  document.getElementById('panel').classList.add('open');
+}
+
 // ── Init ───────────────────────────────────────────────────────────────────────
 loadStrains();
+loadProducts();
 </script>
 </body>
 </html>"""
