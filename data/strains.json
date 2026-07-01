@@ -726,13 +726,15 @@
     "conditions": [],
     "effective_cfu_dose": null,
     "effective_cfu_dose_label": null,
-    "viability": null,
+    "viability": "refrigerated",
     "enteric_coated": null,
     "survivability_notes": null,
-    "evidence_tier": "unknown",
-    "key_rcts": [],
+    "evidence_tier": "preliminary",
+    "key_rcts": [
+      "Erdogan FS et al. 2018 — comparison of kefir produced from natural kefir grains vs starter culture (PMID: 30599959, Food Res Int)"
+    ],
     "notes": "",
-    "enriched": false,
+    "enriched": true,
     "alternative_names": [
       "Lentilactobacillus parakefiri",
       "Lactobacillus parakefiri"
@@ -768,16 +770,22 @@
     "genus": "Lactobacillus",
     "species": "planatarum",
     "strain_designation": "",
-    "conditions": [],
-    "effective_cfu_dose": null,
-    "effective_cfu_dose_label": null,
-    "viability": null,
+    "conditions": [
+      "antibiotic-associated diarrhea (AAD)",
+      "diarrhea-predominant irritable bowel syndrome (IBS-D)"
+    ],
+    "effective_cfu_dose": "1e9, 1e10",
+    "effective_cfu_dose_label": "1 billion CFU/day, 10 billion CFU/day",
+    "viability": "shelf-stable",
     "enteric_coated": null,
-    "survivability_notes": null,
-    "evidence_tier": "unknown",
-    "key_rcts": [],
+    "survivability_notes": "No significant shifts were observed in microbial diversity.",
+    "evidence_tier": "moderate",
+    "key_rcts": [
+      "Lukasik J et al. 2022 — no effect on AAD, but reduced overall risk of diarrhea (PMID 35727573, JAMA Pediatr)",
+      "Martoni CJ et al. 2023 — improved IBS symptom severity with dose-ranging effect (PMID 37576702, World J Gastroenterol)"
+    ],
     "notes": "Typo — correct spelling is 'Lactiplantibacillus plantarum' (formerly L. plantarum)",
-    "enriched": false,
+    "enriched": true,
     "alternative_names": [
       "Lactiplantibacillus plantarum",
       "Lactobacillus plantarum"
@@ -849,16 +857,22 @@
     "genus": "Lactobacillus",
     "species": "rueteri",
     "strain_designation": "",
-    "conditions": [],
+    "conditions": [
+      "major depressive disorder (MDD)",
+      "postmenopausal osteoporosis"
+    ],
     "effective_cfu_dose": null,
     "effective_cfu_dose_label": null,
     "viability": null,
     "enteric_coated": null,
     "survivability_notes": null,
-    "evidence_tier": "unknown",
-    "key_rcts": [],
+    "evidence_tier": "moderate",
+    "key_rcts": [
+      "Söderberg Veibäck G et al. 2025 — adjunctive antidepressant efficacy in depressed patients (PMID: 40484149, Brain Behav Immun)",
+      "Gregori G et al. 2024 — no effect on bone loss in postmenopausal women (PMID: N/A)"
+    ],
     "notes": "Typo — correct spelling is 'Limosilactobacillus reuteri' (formerly L. reuteri)",
-    "enriched": false,
+    "enriched": true,
     "alternative_names": [
       "Limosilactobacillus reuteri",
       "Lactobacillus reuteri"
@@ -1259,13 +1273,13 @@
     "conditions": [],
     "effective_cfu_dose": null,
     "effective_cfu_dose_label": null,
-    "viability": null,
+    "viability": "shelf-stable | refrigerated",
     "enteric_coated": null,
     "survivability_notes": null,
     "evidence_tier": "unknown",
     "key_rcts": [],
-    "notes": "",
-    "enriched": false,
+    "notes": "The abstract discusses the properties of Saccharomyces exiguus as a sourdough yeast, but does not provide any information on its use as a probiotic or human clinical data.",
+    "enriched": true,
     "alternative_names": [
       "Kazachstania exigua"
     ]
@@ -1276,16 +1290,20 @@
     "genus": "Saccharomyces",
     "species": "turicensis",
     "strain_designation": "",
-    "conditions": [],
+    "conditions": [
+      "atopic dermatitis (AD)"
+    ],
     "effective_cfu_dose": null,
     "effective_cfu_dose_label": null,
-    "viability": null,
+    "viability": "refrigerated",
     "enteric_coated": null,
-    "survivability_notes": null,
-    "evidence_tier": "unknown",
-    "key_rcts": [],
-    "notes": "",
-    "enriched": false,
+    "survivability_notes": "No information available on the stability or delivery of Saccharomyces turicensis CAU Y1706.",
+    "evidence_tier": "preliminary",
+    "key_rcts": [
+      "Kim JH et al. 2019 — Kazachstania turicensis CAU Y1706 ameliorates atopic dermatitis by regulation of the gut-skin axis (PMID 30738679, J Dairy Sci)"
+    ],
+    "notes": "A single in vivo study suggests that Saccharomyces turicensis CAU Y1706 has potential as a supplement for alleviation of AD. More research is needed to confirm these findings.",
+    "enriched": true,
     "alternative_names": [
       "Kazachstania turicensis"
     ]
@@ -1392,15 +1410,24 @@
     "species": "delbrueckii subsp. lactis",
     "strain_designation": "",
     "alternative_names": [],
-    "conditions": [],
+    "conditions": [
+      "Type 2 Diabetes",
+      "Insulin Resistance",
+      "Upper Respiratory Diseases"
+    ],
     "effective_cfu_dose": null,
     "effective_cfu_dose_label": null,
-    "viability": null,
+    "viability": "shelf-stable",
     "enteric_coated": null,
     "survivability_notes": null,
-    "evidence_tier": "placeholder",
-    "key_rcts": [],
-    "notes": "PLACEHOLDER — needs review. Related to but distinct from subsp. bulgaricus."
+    "evidence_tier": "unknown",
+    "key_rcts": [
+      "Gómez-Pérez AM et al. 2024 — neither FMT nor probiotic effective in improving insulin sensitivity and HbA1c (PMID: 39458486, Nutrients)",
+      "Ma G et al. 2024 — probiotic supplementation during pregnancy has a significant impact on functional metabolism (PMID: 38687069, Microbiol Spectr)",
+      "Gelardi M et al. 2020 — pilot study on upper respiratory diseases (PMID: N/A, J Biol Regul Homeost Agents)"
+    ],
+    "notes": "PLACEHOLDER — needs review. Related to but distinct from subsp. bulgaricus.",
+    "enriched": true
   },
   {
     "id": "lactococcus_lactis",
@@ -1409,14 +1436,23 @@
     "species": "lactis",
     "strain_designation": "",
     "alternative_names": [],
-    "conditions": [],
+    "conditions": [
+      "type 2 diabetes mellitus",
+      "menopause",
+      "bariatric surgery"
+    ],
     "effective_cfu_dose": null,
     "effective_cfu_dose_label": null,
-    "viability": null,
+    "viability": "unknown",
     "enteric_coated": null,
     "survivability_notes": null,
-    "evidence_tier": "placeholder",
-    "key_rcts": [],
-    "notes": "PLACEHOLDER — needs review. Common dairy fermentation organism."
+    "evidence_tier": "unknown",
+    "key_rcts": [
+      "Allam et al. 2025 — Combination of probiotic formulations, including Lactococcus lactis, may be beneficial for improving glycemic control and lipid profiles in patients with type 2 diabetes mellitus (PMID: 40646644, Diabetol Metab Syndr)",
+      "Ribeiro et al. 2025 — Only hormone therapy group showed significant increase in bacterial abundance involved in isoflavone metabolism (PMID: 40586589, Menopause)",
+      "Potrykus et al. 2025 — Preoperative probiotic supplementation with Lactococcus lactis may have beneficial effects on inflammation, endotoxemia, adipokines, and gastrointestinal peptides in patients six months after bariatric surgery (PMID: null, Nutr J)"
+    ],
+    "notes": "PLACEHOLDER — needs review. Common dairy fermentation organism.",
+    "enriched": true
   }
 ]

@@ -270,7 +270,7 @@ def run(
     if not dry_run:
         result = list(updated_map.values())
         with open(STRAINS_PATH, "w") as f:
-            json.dump(result, f, indent=2)
+            json.dump(result, f, indent=2, ensure_ascii=False)
         enriched_count = sum(1 for s in result if s.get("enriched"))
         print(f"\nDone. {STRAINS_PATH.name} updated — {enriched_count}/{len(result)} strains enriched.")
     else:
