@@ -49,7 +49,7 @@ EVIDENCE_TIERS = {"strong", "moderate", "preliminary", "unknown"}
 FILL_ONLY = {"effective_cfu_dose", "effective_cfu_dose_label", "viability",
              "enteric_coated", "survivability_notes"}
 # Fields overwritten even if already populated (when --update is set)
-UPDATE_ALWAYS = {"evidence_tier", "key_rcts", "notes", "conditions"}
+UPDATE_ALWAYS = {"evidence_tier", "evidence_tier_rationale", "key_rcts", "notes", "conditions"}
 
 
 # ── PubMed helpers ─────────────────────────────────────────────────────────────
@@ -62,33 +62,43 @@ def _ncbi_get(url: str, params: dict, retries: int = 3, as_json: bool = True):
             r.raise_for_status()
             return r.json() if as_json else r.text
         except requests.exceptions.HTTPError:
-            if r.status_code >= 500 and attempt < retries - 1:
-                wait = 2 ** attempt
+            if r.status_code in (429, 500, 502, 503, 504) and attempt < retries - 1:
+                wait = 2 ** attempt if r.status_code != 429 else max(2 ** attempt, 5)
                 print(f"    NCBI {r.status_code} — retrying in {wait}s...")
                 time.sleep(wait)
             else:
                 raise
 
 
-def pubmed_search(strain_name: str, extra_terms: str = "", n: int = PUBMED_MAX_RESULTS) -> list[str]:
+def pubmed_search(strain_name: str, extra_terms: str = "", n: int = PUBMED_MAX_RESULTS, alternative_names: list[str] | None = None) -> list[str]:
     """Return up to n PMIDs for clinical/review studies on this strain."""
-    species = " ".join(strain_name.split()[:2])
-    base = f'"{species}"[Title/Abstract] AND probiotic[Title/Abstract]'
     clinical = '(randomized[Title/Abstract] OR "clinical trial"[pt] OR "systematic review"[pt] OR "meta-analysis"[pt])'
-    query = f"{base} AND {clinical}"
-    if extra_terms:
-        query = f'({query}) AND ({extra_terms})'
 
-    params = {"db": "pubmed", "term": query, "retmax": n, "retmode": "json", "sort": "relevance"}
-    if NCBI_API_KEY:
-        params["api_key"] = NCBI_API_KEY
-
-    ids = _ncbi_get(NCBI_ESEARCH, params)["esearchresult"]["idlist"]
-
-    # Fall back to broader search if no clinical hits
-    if not ids:
-        params["term"] = f'"{species}"[Title/Abstract] AND probiotic[Title/Abstract]'
+    def _search_by_name(name: str) -> list[str]:
+        species = " ".join(name.split()[:2])
+        base = f'"{species}"[Title/Abstract] AND probiotic[Title/Abstract]'
+        query = f"{base} AND {clinical}"
+        if extra_terms:
+            query = f'({query}) AND ({extra_terms})'
+        params = {"db": "pubmed", "term": query, "retmax": n, "retmode": "json", "sort": "relevance"}
+        if NCBI_API_KEY:
+            params["api_key"] = NCBI_API_KEY
         ids = _ncbi_get(NCBI_ESEARCH, params)["esearchresult"]["idlist"]
+        # Fall back to broader search if no clinical hits
+        if not ids:
+            params["term"] = f'"{species}"[Title/Abstract] AND probiotic[Title/Abstract]'
+            ids = _ncbi_get(NCBI_ESEARCH, params)["esearchresult"]["idlist"]
+        return ids
+
+    ids = _search_by_name(strain_name)
+
+    # Try alternative names if primary search returned nothing
+    for alt_name in (alternative_names or []):
+        if ids:
+            break
+        print(f"    No results for '{strain_name}' — trying alternative name '{alt_name}'")
+        time.sleep(0.4)
+        ids = _search_by_name(alt_name)
 
     return ids
 
@@ -130,6 +140,7 @@ Use null for any field where the abstracts provide insufficient evidence.
   "enteric_coated": true | false | null,
   "survivability_notes": "1-2 sentences on stability/delivery, or null",
   "key_rcts": ["Author et al. YEAR — key finding (PMID XXXXXXXX, Journal)"],
+  "evidence_tier_rationale": "1 sentence explaining why this tier was assigned e.g. 'Rated moderate: one RCT showed benefit for IBS but findings were mixed across studies'",
   "notes": "1-2 sentences summarising the evidence landscape for this strain"
 }}
 
@@ -144,7 +155,7 @@ Return ONLY valid JSON. No explanation, no markdown fences.
 
 
 def extract_with_llm(strain_name: str, designation: str, abstracts: str, model: str) -> dict | None:
-    llm = OllamaLLM(model=model, format="json")
+    llm = OllamaLLM(model=model, format="json", timeout=200)
     prompt = EXTRACTION_PROMPT.format(
         strain_name=strain_name,
         designation=designation or "unspecified",
@@ -176,10 +187,11 @@ def enrich_strain(
     model: str = DEFAULT_MODEL,
 ) -> dict:
     name = strain.get("name", strain["id"])
-    designation = strain.get("strain_designation") or ""
+    designation = strain.get("strain_code") or ""
+    alternative_names = strain.get("alternative_names") or []
     print(f"\n  → {strain['id']}  ({name})")
 
-    pmids = pubmed_search(name, extra_terms=extra_search)
+    pmids = pubmed_search(name, extra_terms=extra_search, alternative_names=alternative_names)
     if not pmids:
         print(f"    No PubMed results — skipping")
         return strain
@@ -259,7 +271,7 @@ def run(
     if not dry_run:
         result = list(updated_map.values())
         with open(STRAINS_PATH, "w") as f:
-            json.dump(result, f, indent=2)
+            json.dump(result, f, indent=2, ensure_ascii=False)
         enriched_count = sum(1 for s in result if s.get("enriched"))
         print(f"\nDone. {STRAINS_PATH.name} updated — {enriched_count}/{len(result)} strains enriched.")
     else:

@@ -4,78 +4,86 @@
     "name": "Akkermansia muciniphila",
     "genus": "Akkermansia",
     "species": "muciniphila",
-    "strain_designation": "",
+    "strain_code": "",
     "conditions": [
-      "Type 2 diabetes",
-      "Obesity",
-      "Major depression"
+      "overweight/obese type 2 diabetes",
+      "depression"
     ],
     "effective_cfu_dose": null,
     "effective_cfu_dose_label": null,
-    "viability": null,
+    "viability": "refrigerated",
     "enteric_coated": null,
-    "survivability_notes": null,
+    "survivability_notes": "The studies did not provide specific notes on the stability or delivery of the probiotic strain.",
     "evidence_tier": "moderate",
     "key_rcts": [
-      "Zhang et al. 2025 \u2014 efficacy depends on baseline levels in the gut (PMID: 39879980, Cell Metabolism)",
-      "M\u00f6rkl et al. 2025 \u2014 improved morning vagus nerve function and increased Akkermansia muciniphila (PMID: 40298641, Gut Microbes)"
+      "Zhang Y et al. 2025 — AKK-WST01 supplementation in patients with overweight/obese type 2 diabetes (NCT04797442, Cell Metab.)",
+      "Mörkl S et al. 2025 — OMNi-BiOTiC® STRESS Repair for depression and healthy controls (PMC12045568, Gut Microbes)"
     ],
-    "notes": "Akkermansia muciniphila has shown promising results in managing type 2 diabetes, obesity, and major depression. Efficacy may depend on baseline gut levels.",
-    "enriched": true
+    "notes": "The available abstracts provide evidence for the effectiveness of Akkermansia muciniphila supplementation in managing obesity and type 2 diabetes, as well as depression. However, there is no clear dose-effect relationship reported.",
+    "enriched": true,
+    "alternative_names": [],
+    "evidence_tier_rationale": "Rated moderate: two RCTs showed benefits in different conditions but provided mixed or limited findings across studies on the probiotic effect."
   },
   {
     "id": "bacillus_clausii",
-    "name": "Bacillus clausii",
+    "name": "Alkalihalobacillus clausii",
     "genus": "Bacillus",
     "species": "clausii",
-    "strain_designation": "",
+    "strain_code": "",
     "conditions": [
-      "psoriasis",
-      "acute diarrhea",
-      "gastroenteritis"
+      "antibiotic-associated diarrhea",
+      "acute allergic rhinitis"
     ],
     "effective_cfu_dose": null,
     "effective_cfu_dose_label": null,
     "viability": "shelf-stable",
     "enteric_coated": null,
     "survivability_notes": "Stability and delivery not a major concern, as probiotics are generally shelf-stable.",
-    "evidence_tier": "strong",
+    "evidence_tier": "moderate",
     "key_rcts": [
-      "Ianiro et al. 2018 \u2014 reduced duration of diarrhea (PMID 30103531, Nutrients)",
-      "Michel et al. 2025 \u2014 improved parameters in acute gastroenteritis treatment (PMID not available yet)"
+      "García G et al. 2024 — Randomized Clinical Trials Demonstrate the Safety Assessment of Alkalihalobacillus clausii AO1125 for Use as a Probiotic in Humans (PMCID: PMC11596933, PMID: 39597688, Microorganisms)"
     ],
-    "notes": "Bacillus clausii shows promise in treating various gastrointestinal issues, with a good safety profile.",
-    "enriched": true
+    "notes": "Two randomized controlled trials (RCTs) have assessed the use of Alkalihalobacillus clausii in treating antibiotic-associated diarrhea and acute allergic rhinitis, indicating safety and some efficacy but with mixed results across different studies",
+    "enriched": true,
+    "alternative_names": [
+      "Bacillus clausii"
+    ],
+    "evidence_tier_rationale": "Rated moderate: two RCTs show safety and efficacy against AAD and AR symptoms, but the effectiveness of Alkalihalobacillus clausii 088AE is not consistently demonstrated across studies"
   },
   {
     "id": "bacillus_coagulans",
-    "name": "Bacillus coagulans (Lactospore bacillus)",
+    "name": "Weizmannia coagulans",
     "genus": "Bacillus",
     "species": "coagulans",
-    "strain_designation": "",
+    "strain_code": "",
     "conditions": [
-      "psoriasis",
-      "chronic constipation",
-      "irritable bowel syndrome"
+      "Functional constipation",
+      "Alcoholic liver disease",
+      "Anxiety and depression"
     ],
     "effective_cfu_dose": null,
     "effective_cfu_dose_label": null,
     "viability": "shelf-stable",
     "enteric_coated": true,
-    "survivability_notes": null,
-    "evidence_tier": "strong",
+    "survivability_notes": "Weizmannia coagulans BC01 (BC01) and Weizmannia coagulans BC99 are administered orally as a powder, demonstrating no adverse events throughout the trial period.",
+    "evidence_tier": "moderate",
     "key_rcts": [
-      "Buha\u0219 MC et al. 2023 - Psoriasis Area and Severity Index, Dermatology Life Quality Index; van der Schoot A et al. 2022 - stool frequency, integrative symptom scores"
+      "Xu Y et al. 2025 — Improving functional constipation by regulating gut microbiota: A randomized, placebo-controlled, clinical study (e46861)"
     ],
-    "notes": "Probiotics and prebiotics show promise in treating psoriasis, improving gut microbiota changes, and constipation symptoms, but evidence is limited to small trials and requires further research",
-    "enriched": true
+    "notes": "There is emerging evidence supporting Weizmannia coagulans BC01 as an effective probiotic strain for managing functional constipation, while Weizmannia coagulans BC99 has shown potential in improving liver function and gut microbiota of long-term alcohol drinkers. Preliminary data also suggests a role in treating anxiety and depression via the gut-brain axis.",
+    "enriched": true,
+    "alternative_names": [
+      "Bacillus coagulans",
+      "Lactospore bacillus"
+    ],
+    "evidence_tier_rationale": "Rated moderate: two RCTs were conducted with Weizmannia coagulans BC99 showing positive effects for liver function and gut microbiota; however, one of the studies had a smaller sample size."
   },
   {
     "id": "bacillus_indicus",
     "name": "Bacillus indicus",
     "genus": "Bacillus",
     "species": "indicus",
-    "strain_designation": "",
+    "strain_code": "",
     "conditions": [
       "psoriasis",
       "hypertriglyceridemia"
@@ -85,335 +93,252 @@
     "viability": "shelf-stable",
     "enteric_coated": true,
     "survivability_notes": "The probiotic supplement was able to survive and be effective in the human body.",
-    "evidence_tier": "strong",
+    "evidence_tier": "moderate",
     "key_rcts": [
-      "Buha\u0219 MC et al. 2023 \u2014 Psoriasis Area and Severity Index, Dermatology Life Quality Index (PMID 37446403, Int J Mol Sci)",
-      "Campbell AW et al. 2020 \u2014 Triglyceride levels (TG) in patients with mild to moderate hypertriglyceridemia (PMID 33041703, Integr Med)"
+      "Buhaș et al. 2023 — Patients with psoriasis receiving probiotic and prebiotic supplementation show improved disease activity (PMID 37446403)"
     ],
-    "notes": "Probiotics and prebiotics have shown promise in treating psoriasis and reducing triglyceride levels.",
-    "enriched": true
+    "notes": "The efficacy and effectiveness of Bacillus indicus in reducing triglycerides is supported by at least one randomized controlled trial. However, more research is needed to establish optimal dosing and storage conditions for this strain.",
+    "enriched": true,
+    "alternative_names": [],
+    "evidence_tier_rationale": "Rated moderate: two studies support the use of Bacillus indicus spores, but one study involves a different strain and has mixed results across RCTs."
   },
   {
     "id": "bacillus_licheniformis",
     "name": "Bacillus licheniformis",
     "genus": "Bacillus",
     "species": "licheniformis",
-    "strain_designation": "",
+    "strain_code": "",
     "conditions": [
-      "psoriasis",
-      "postoperative recovery",
-      "antibiotic-associated diarrhoea (AAD) and Clostridium difficile diarrhoea (CDD)",
+      "Psoriasis",
       "Clostridioides difficile infection"
     ],
     "effective_cfu_dose": null,
     "effective_cfu_dose_label": null,
-    "viability": "unknown",
+    "viability": "shelf-stable",
     "enteric_coated": null,
-    "survivability_notes": null,
+    "survivability_notes": "No specific details about survivability or delivery methods provided in the abstracts.",
     "evidence_tier": "moderate",
     "key_rcts": [
-      "Buha\u00c5\u0178 et al. 2023 \u2014 Bacillus licheniformis showed benefits in patients with psoriasis (PMID 37446403, Int J Mol Sci)",
-      "Wu et al. 2025 \u2014 Perioperative administration of Bacillus licheniformis capsules facilitated early resolution of inflammation and restoration of gastrointestinal motility (PMID 40062001, World J Gastrointest Surg)",
-      "Xie et al. 2015 \u2014 Only one trial showed that Bacillus licheniformis was effective for preventing AAD in older patients (PMID 25805164, Travel Med Infect Dis)",
-      "Gweon et al. 2025 \u2014 Five-Day Treatment with B. licheniformis Along with Classical Vancomycin Treatment Was Effective in Preserving Gut Microbiota in Patients with Clostridioides difficile Infection (PMID [insert PMID], Nutrients)"
+      "Wu Y et al. 2025 — perioperative probiotic intervention (PMCID: PMC11886005, World J Gastrointest Surg)",
+      "Xie C et al. 2015 — prevention of AAD and CDD in older patients (PMID: 25805164, TMAID)"
     ],
-    "notes": "Bacillus licheniformis has shown benefits in patients with psoriasis, postoperative recovery, and antibiotic-associated diarrhoea. However, more research is needed to confirm these findings.",
-    "enriched": true
+    "notes": "Studies on Bacillus licheniformis primarily focused on postoperative recovery, anti-inflammatory effects in psoriasis patients, and prevention/management of antibiotic-associated diarrhea. There is no clear evidence regarding its effectiveness in Clostridioides difficile infection and the optimal dosage for human use.",
+    "enriched": true,
+    "alternative_names": [],
+    "evidence_tier_rationale": "Rated moderate: two studies evaluated the use of Bacillus licheniformis for different conditions but provided varying results and did not specify effective CFU doses or enteric coating."
   },
   {
     "id": "bacillus_megaterium",
-    "name": "Bacillus megaterium",
+    "name": "Priestia megaterium",
     "genus": "Bacillus",
     "species": "megaterium",
-    "strain_designation": "",
+    "strain_code": "",
     "conditions": [
-      "Loose stools",
-      "Gingivitis"
+      "Streptococcus agalactiae infection",
+      "hyperuricemia"
     ],
     "effective_cfu_dose": null,
     "effective_cfu_dose_label": null,
     "viability": "shelf-stable",
     "enteric_coated": null,
     "survivability_notes": "None mentioned.",
-    "evidence_tier": "unknown",
+    "evidence_tier": "preliminary",
     "key_rcts": [
-      "Rea K et al. 2023 \u2014 Bacillus megaterium MIT411 significantly decreased the incidence of loose stools (BM2022.0117)"
+      "null"
     ],
-    "notes": "Bacillus species have shown potential for gastrointestinal health and oral health applications, but more research is needed.",
-    "enriched": true
+    "notes": "The studies do not provide specific human clinical data or effective CFU doses for hyperuricemia and Streptococcus agalactiae infection. The majority of the research is focused on tilapia, with one study indicating potential probiotic benefits in a mouse model.",
+    "enriched": true,
+    "alternative_names": [
+      "Bacillus megaterium"
+    ],
+    "evidence_tier_rationale": "Rated preliminary: Only one study is provided for each treatment (Lactococcus garvieae, P. megaterium, and Bacterium spp.) in the context of aquaculture growth performance and resistance to S. agalactiae infection."
   },
   {
     "id": "bacillus_subtillis",
-    "name": "Bacillus subtillis",
+    "name": "Bacillus subtilis",
     "genus": "Bacillus",
     "species": "subtillis",
-    "strain_designation": "",
-    "conditions": [],
+    "strain_code": "",
+    "conditions": [
+      "psoriasis",
+      "necrotic enteritis"
+    ],
     "effective_cfu_dose": null,
     "effective_cfu_dose_label": null,
     "viability": "shelf-stable",
     "enteric_coated": null,
     "survivability_notes": "No information on stability or delivery of the probiotic in this study.",
-    "evidence_tier": "preliminary",
+    "evidence_tier": "moderate",
     "key_rcts": [
-      "Souza et al. 2021 \u2014 Improved egg production, egg mass, and nutrient metabolizability of layer breeders (PMID: 34827816, Animals)"
+      "Buhaș MC et al. 2023 — Effectiveness of probiotics in psoriasis (PMID 37446403, Int J Mol Sci)",
+      "Garvey SM et al. 2022 — Efficacy of Bacillus subtilis BS50 in reducing gastrointestinal symptoms (PMID 36269141, Gut Microbes)"
     ],
-    "notes": "Typo in source list \u2014 correct spelling is 'Bacillus subtilis'",
-    "enriched": true
-  },
-  {
-    "id": "bifidobacteria_lactis",
-    "name": "Bifidobacteria lactis",
-    "genus": "Bifidobacteria",
-    "species": "lactis",
-    "strain_designation": "",
-    "conditions": [],
-    "effective_cfu_dose": null,
-    "effective_cfu_dose_label": null,
-    "viability": null,
-    "enteric_coated": null,
-    "survivability_notes": null,
-    "evidence_tier": "unknown",
-    "key_rcts": [],
-    "notes": "Likely refers to Bifidobacterium animalis subsp. lactis; non-standard genus spelling",
-    "enriched": false
+    "notes": "While one study showed promising efficacy in reducing gastrointestinal symptoms and improving psoriasis outcomes, another study noted reduced viability during storage. Further research is needed to confirm effectiveness and optimal dosing.",
+    "enriched": true,
+    "alternative_names": [],
+    "evidence_tier_rationale": "Rated moderate: two RCTs supported the use of probiotics for gut health and psoriasis, but mixed results were observed across studies."
   },
   {
     "id": "bifidobacterium_adolescentis",
     "name": "Bifidobacterium adolescentis",
     "genus": "Bifidobacterium",
     "species": "adolescentis",
-    "strain_designation": "",
+    "strain_code": "",
     "conditions": [
-      "depression",
+      "subclinical symptoms of depression",
       "anxiety",
-      "sleep disturbances",
-      "coronary artery disease"
+      "insomnia"
     ],
     "effective_cfu_dose": null,
     "effective_cfu_dose_label": null,
     "viability": "shelf-stable",
     "enteric_coated": null,
-    "survivability_notes": null,
-    "evidence_tier": "strong",
+    "survivability_notes": "No specific notes on stability/delivery provided in the abstracts.",
+    "evidence_tier": "moderate",
     "key_rcts": [
-      "Lee et al. 2021 \u2014 improved mental health and sleep (PMID 34444820, Nutrients)",
-      "Sun et al. 2022 \u2014 added benefits in CAD management via modulation of gut microbiota/metabolome (PMID 35343796, mSystems)"
+      "Lee HJ et al. 2021 — Reduction of depressive and anxiety symptoms (PMCID: PMC8398773, Nutrients)"
     ],
-    "notes": "",
-    "enriched": true
+    "notes": "The abstracts support the use of Bifidobacterium adolescentis NK98 in improving mental health and sleep in healthy adults. The clinical trial showed significant reductions in depressive and anxiety symptoms with NVP-1704.",
+    "enriched": true,
+    "alternative_names": [],
+    "evidence_tier_rationale": "Rated moderate based on one RCT showing benefits for mental health conditions (depression, anxiety, insomnia)"
   },
   {
     "id": "bifidobacterium_animalis_subsp_lactis",
     "name": "Bifidobacterium animalis subsp. lactis",
     "genus": "Bifidobacterium",
     "species": "animalis subsp. lactis",
-    "strain_designation": "",
+    "strain_code": "",
     "conditions": [
-      "functional constipation"
+      "Functional constipation",
+      "Infantile colic"
     ],
     "effective_cfu_dose": null,
     "effective_cfu_dose_label": null,
     "viability": "refrigerated",
-    "enteric_coated": null,
-    "survivability_notes": null,
+    "enteric_coated": true,
+    "survivability_notes": "The strain is specified to be administered as a probiotic formula with Bifidobacterium animalis subsp. lactis HN019 and Lacticaseibacillus rhamnosus HN001.",
     "evidence_tier": "moderate",
     "key_rcts": [
-      "Lai et al. 2023 \u2014 relieved hard stool in functional constipation patients after 4 weeks intervention (PMID 37078654, Gut Microbes)"
+      "Lai et al. 2023 — Probiotics for functional constipation: Effect of dietary fibers, probiotics or oligosaccharides on gut microbiota composition (PMCID PMC10120550, Gut Microbes)"
     ],
-    "notes": "Daily supplement of three prebiotic formulas with dietary fibers or a probiotic formula with Bifidobacterium animalis subsp. lactis HN019 + Lacticaseibacillus rhamnosus HN001 effectively relieved hard stool in functional constipation patients after 4 weeks intervention",
-    "enriched": true
+    "notes": "The Bifidobacterium animalis subsp. lactis strain has been tested in both human clinical trials targeting functional constipation and infantile colic, providing some evidence of efficacy.",
+    "enriched": true,
+    "alternative_names": [
+      "Bifidobacterium lactis"
+    ],
+    "evidence_tier_rationale": "Rated moderate: one RCT showed benefits for IBS and another RCT studied the effects in functional constipation, but findings were mixed across studies."
   },
   {
     "id": "bifidobacterium_bifidum",
     "name": "Bifidobacterium bifidum",
     "genus": "Bifidobacterium",
     "species": "bifidum",
-    "strain_designation": "",
+    "strain_code": "",
     "conditions": [
-      "Antibiotic-Associated Diarrhea"
+      "antibiotic-associated diarrhea",
+      "cognitive function improvement",
+      "depressive disorder alleviation"
     ],
     "effective_cfu_dose": null,
     "effective_cfu_dose_label": null,
     "viability": "shelf-stable",
     "enteric_coated": true,
-    "survivability_notes": null,
+    "survivability_notes": "Bifidobacterium bifidum is known to be a shelf-stable probiotic strain.",
     "evidence_tier": "moderate",
     "key_rcts": [
-      "Lukasik et al. 2022 \u2014 A multispecies probiotic did not reduce the risk of AAD in children when analyzed according to the most stringent definition (PMID 35727573, JAMA Pediatr).",
-      "Kim et al. 2021 \u2014 Probiotics improved cognitive function and mood with changes in gut microbiota in healthy older adults (PMID 32300799, Gerontology).",
-      "Sergeev et al. 2020 \u2014 Effects of synbiotic supplement on human gut microbiota, body composition, and weight loss in obesity (PMID XXXXXXXX, Nutrients)"
+      "Dierikx T et al. 2022 — no AAD reduction (PMID 35727573, JAMA Pediatrics)",
+      "Kim CS et al. 2021 — cognitive function and mood improvement with changes in gut microbiota (PMID 32300799, J Gerontol A Biol Sci Med Sci)"
     ],
-    "notes": "Probiotics have shown promise in improving cognitive function and mood in healthy older adults, but the evidence for their use in other conditions is limited",
-    "enriched": true
-  },
-  {
-    "id": "bifidobacterium_bifidum_bifidobacterium",
-    "name": "Bifidobacterium bifidum/bifidobacterium",
-    "genus": "Bifidobacterium",
-    "species": "bifidum/bifidobacterium",
-    "strain_designation": "",
-    "conditions": [],
-    "effective_cfu_dose": null,
-    "effective_cfu_dose_label": null,
-    "viability": null,
-    "enteric_coated": null,
-    "survivability_notes": null,
-    "evidence_tier": "unknown",
-    "key_rcts": [],
-    "notes": "Ambiguous blend entry \u2014 may refer to B. bifidum only",
-    "enriched": false
-  },
-  {
-    "id": "bifidobacterium_bifidum_lactis",
-    "name": "Bifidobacterium bifidum/lactis",
-    "genus": "Bifidobacterium",
-    "species": "bifidum/lactis",
-    "strain_designation": "",
-    "conditions": [],
-    "effective_cfu_dose": null,
-    "effective_cfu_dose_label": null,
-    "viability": null,
-    "enteric_coated": null,
-    "survivability_notes": null,
-    "evidence_tier": "unknown",
-    "key_rcts": [],
-    "notes": "Blend entry \u2014 contains B. bifidum and B. animalis subsp. lactis",
-    "enriched": false
+    "notes": "No consistent effective CFU dose was found. Two studies suggest potential benefits but with inconsistent outcomes.",
+    "enriched": true,
+    "alternative_names": [],
+    "evidence_tier_rationale": "Rated moderate: two RCTs provided mixed results for Bifidobacterium bifidum, with one showing no effect on antibiotic-associated diarrhea and the other showing improvements in cognitive function and mood."
   },
   {
     "id": "bifidobacterium_breve",
     "name": "Bifidobacterium breve",
     "genus": "Bifidobacterium",
     "species": "breve",
-    "strain_designation": "",
+    "strain_code": "",
     "conditions": [
-      "Major Depression Disorder"
+      "major depression disorder",
+      "suspected mild cognitive impairment"
     ],
     "effective_cfu_dose": "1010 CFU/day",
     "effective_cfu_dose_label": "10^10 CFU/day",
-    "viability": null,
-    "enteric_coated": null,
-    "survivability_notes": null,
-    "evidence_tier": "strong",
-    "key_rcts": [
-      "Tian P et al. 2022 \u2014 attenuates depression and associated gastrointestinal disorders (PMID 34875345, Brain Behav Immun)"
-    ],
-    "notes": "Promising psychobiotic strain for treating psychiatric disorders; mechanisms involve changes in gut microbiome and tryptophan metabolism",
-    "enriched": true
-  },
-  {
-    "id": "bifidobacterium_longum",
-    "name": "Bifidobacterium longum",
-    "genus": "Bifidobacterium",
-    "species": "longum",
-    "strain_designation": "",
-    "conditions": [
-      "cognitive impairment",
-      "depressive disorder",
-      "irritable bowel syndrome (IBS)",
-      "major depressive disorder"
-    ],
-    "effective_cfu_dose": null,
-    "effective_cfu_dose_label": null,
-    "viability": null,
-    "enteric_coated": null,
-    "survivability_notes": "Strains were not specified as being shelf-stable, refrigerated, or requiring enteric coating.",
+    "viability": "refrigerated",
+    "enteric_coated": true,
+    "survivability_notes": "Probiotics were administered as freeze-dried CCFM1025 in a dose of viable bacteria of 10^10 CFU daily, and no specific stability information is provided.",
     "evidence_tier": "moderate",
     "key_rcts": [
-      "Kim CS et al. 2021 \u2014 probiotics improved cognitive function and mood in older adults (PMID: 32300799, J Gerontol A Biol Sci Med Sci)",
-      "Pinto-Sanchez MI et al. 2017 \u2014 Bifidobacterium longum NCC3001 reduced depression scores in IBS patients (PMID: 28483500, Gastroenterology)"
+      "Tian et al. 2022 — Bifidobacterium breve CCFM1025 attenuates major depression disorder via regulating gut microbiome and tryptophan metabolism: A randomized clinical trial (34875345)",
+      "Asaoka et al. 2022 — Effect of Probiotic Bifidobacterium breve in Improving Cognitive Function and Preventing Brain Atrophy in Older Patients with Suspected Mild Cognitive Impairment: Results of a 24-Week Randomized, Double-Blind, Placebo-Controlled Trial (36875931)"
     ],
-    "notes": "Probiotics containing Bifidobacterium longum have been associated with improved cognitive function and mood in older adults, as well as reduced depression scores in patients with irritable bowel syndrome.",
-    "enriched": true
+    "notes": "Bifidobacterium breve CCFM1025 shows potential benefits in treating MDD and preventing brain atrophy with 1 billion CFU/day administration.",
+    "enriched": true,
+    "alternative_names": [],
+    "evidence_tier_rationale": "Rated moderate: two RCTs showed positive effects for B. breve CCFM1025 in improving depression and cognitive function, but findings were mixed across studies."
   },
   {
     "id": "bifidobacterium_longum_subsp_infantis",
     "name": "Bifidobacterium longum subsp. infantis",
     "genus": "Bifidobacterium",
     "species": "longum subsp. infantis",
-    "strain_designation": "",
+    "strain_code": "",
     "conditions": [
-      "irritable bowel syndrome (IBS)",
-      "depression",
-      "anxiety",
-      "cognitive impairment"
+      "Irritable Bowel Syndrome",
+      "Depression"
     ],
     "effective_cfu_dose": null,
     "effective_cfu_dose_label": null,
-    "viability": null,
-    "enteric_coated": null,
-    "survivability_notes": null,
+    "viability": "shelf-stable",
+    "enteric_coated": true,
+    "survivability_notes": "Bifidobacterium longum subsp. infantis was administered in enteric-coated capsules and had similar findings when compared to non-enteric-coated probiotics.",
     "evidence_tier": "moderate",
     "key_rcts": [
-      "Kim CS et al. 2021 \u2014 probiotics promote mental flexibility and alleviate stress in healthy older adults",
-      "Pinto-Sanchez MI et al. 2017 \u2014 reduces depression scores but not anxiety scores and increases quality of life in patients with IBS",
-      "Kazemi A et al. 2019 \u2014 no significant effect on symptoms or function, but reduced urine levels of certain metabolites"
+      "Kim CS et al. 2021 — Probiotic Supplementation Improves Cognitive Function and Mood with Changes in Gut Microbiota in Community-Dwelling Older Adults: A Randomized, Double-Blind, Placebo-Controlled, Multicenter Trial (34895502)",
+      "Pinto-Sanchez MI et al. 2017 — Probiotic Bifidobacterium longum NCC3001 Reduces Depression Scores and Alters Brain Activity: A Pilot Study in Patients With Irritable Bowel Syndrome (27146253)"
     ],
-    "notes": "Bifidobacterium longum subsp. infantis (unspecified strain) has shown benefits for cognitive function and mood in older adults, as well as reducing depression scores in patients with IBS. However, its effectiveness is based on a limited number of studies.",
-    "enriched": true
-  },
-  {
-    "id": "bifidobacterium_longum_lactis",
-    "name": "Bifidobacterium longum/lactis",
-    "genus": "Bifidobacterium",
-    "species": "longum/lactis",
-    "strain_designation": "",
-    "conditions": [],
-    "effective_cfu_dose": null,
-    "effective_cfu_dose_label": null,
-    "viability": null,
-    "enteric_coated": null,
-    "survivability_notes": null,
-    "evidence_tier": "unknown",
-    "key_rcts": [],
-    "notes": "Blend entry \u2014 contains B. longum and B. animalis subsp. lactis",
-    "enriched": false
-  },
-  {
-    "id": "bifidobacterium_rhamnosus",
-    "name": "Bifidobacterium rhamnosus",
-    "genus": "Bifidobacterium",
-    "species": "rhamnosus",
-    "strain_designation": "",
-    "conditions": [],
-    "effective_cfu_dose": null,
-    "effective_cfu_dose_label": null,
-    "viability": null,
-    "enteric_coated": null,
-    "survivability_notes": null,
-    "evidence_tier": "unknown",
-    "key_rcts": [],
-    "notes": "Not a recognised Bifidobacterium species; may be a labelling error for Lacticaseibacillus rhamnosus",
-    "enriched": false
+    "notes": "The abstracts provide evidence of probiotic effects on mental health and gut microbiota composition, with varying levels of effectiveness in different conditions.",
+    "enriched": true,
+    "alternative_names": [
+      "Bifidobacterium infantis"
+    ],
+    "evidence_tier_rationale": "Rated moderate: one RCT showed benefit for IBS but findings were mixed across studies"
   },
   {
     "id": "brevibacillus_laterosporus",
     "name": "Brevibacillus laterosporus",
     "genus": "Brevibacillus",
     "species": "laterosporus",
-    "strain_designation": "",
-    "conditions": [],
+    "strain_code": "",
+    "conditions": [
+      "Irritable Bowel Syndrome (IBS)"
+    ],
     "effective_cfu_dose": null,
     "effective_cfu_dose_label": null,
     "viability": "refrigerated",
-    "enteric_coated": null,
-    "survivability_notes": null,
+    "enteric_coated": true,
+    "survivability_notes": "Good tolerance to bile salt and simulated gastrointestinal fluid.",
     "evidence_tier": "moderate",
     "key_rcts": [
-      "Cao Y et al. 2024 \u2014 probiotic potential of B. laterosporus PBC01 (PMID 38466314, FASEB J)"
+      "Liu Y, Zai X et al. 2024 — probiotic applications in crop and animal production (PMCID: PMC10975594)"
     ],
-    "notes": "B. laterosporus shows substantial potential as a probiotic in crop and animal production; further research needed",
-    "enriched": true
+    "notes": "The probiotic properties of Brevibacillus laterosporus have been studied in both crop and animal production contexts, suggesting potential benefits in these areas. However, more human studies are needed to confirm its efficacy.",
+    "enriched": true,
+    "alternative_names": [],
+    "evidence_tier_rationale": "Rated moderate: two abstracts provide evidence on the use of B. laterosporus for promoting growth and enhancing resistance to pathogens, but only one is a clinical trial."
   },
   {
     "id": "clostridium_butyricum",
     "name": "Clostridium butyricum",
     "genus": "Clostridium",
     "species": "butyricum",
-    "strain_designation": "",
+    "strain_code": "",
     "conditions": [
-      "antibiotic-associated diarrhea",
+      "gut-acquired infection",
+      "intestinal injury",
       "irritable bowel syndrome",
       "inflammatory bowel disease",
       "neurodegenerative disease",
@@ -421,401 +346,303 @@
       "colorectal cancer"
     ],
     "effective_cfu_dose": "5e9",
-    "effective_cfu_dose_label": "high dose (\u2265 5 billion CFUs per day)",
+    "effective_cfu_dose_label": "high dose (≥ 5 billion CFUs per day)",
     "viability": null,
     "enteric_coated": null,
     "survivability_notes": null,
-    "evidence_tier": "unknown",
+    "evidence_tier": "moderate",
     "key_rcts": [
-      "Guo Q et al. 2019 \u2014 moderate protective effect of probiotics for preventing AAD",
-      "Stoeva MK et al. 2021 \u2014 Clostridium butyricum is a butyrate-producing human gut symbiont"
+      "Guo Q et al. 2019 — incidence of antibiotic-associated diarrhea (AAD) after probiotic treatment compared to placebo or active alternative prophylaxis (CD004827, PubMed: 31056619)"
     ],
-    "notes": "Probiotics have been investigated for potential protective or ameliorative effects in various diseases, with a focus on gut microbiota and molecular signals",
-    "enriched": true
+    "notes": "The review summarizes the safety and potential mechanisms of Clostridium butyricum, with a Cochrane systematic review finding probiotics to be effective in preventing antibiotic-associated diarrhea (AAD)",
+    "enriched": true,
+    "alternative_names": [],
+    "evidence_tier_rationale": "Rated moderate: one RCT showed benefit for AAD prevention but findings were mixed across studies"
   },
   {
     "id": "enterococcus_faecalis",
     "name": "Enterococcus faecalis",
     "genus": "Enterococcus",
     "species": "faecalis",
-    "strain_designation": "",
+    "strain_code": "",
     "conditions": [
       "gastric cancer",
-      "allergic rhinitis",
-      "postoperative gastrointestinal symptoms"
+      "allergic rhinitis"
     ],
     "effective_cfu_dose": null,
     "effective_cfu_dose_label": null,
     "viability": "shelf-stable | refrigerated | unknown",
-    "enteric_coated": null,
-    "survivability_notes": null,
+    "enteric_coated": true,
+    "survivability_notes": "No specific notes provided regarding stability or delivery.",
     "evidence_tier": "moderate",
     "key_rcts": [
-      "Marashi et al. 2024 \u2014 alterations in gut microbiome are associated with gastric cancer and precancerous lesions (PMID: 39170038, Front Med)",
-      "Lu et al. 2025 \u2014 probiotic mixtures may be the most effective in reducing RQLQ, Total IgE, and Special IgE; Saccharomyces may be the most efficacious in reducing TNSS and improving efficacy rate (PMID: 39837158, Complement Ther Clin Pract)",
-      "Dowgia\u0142\u0142o-Gornowicz et al. 2024 \u2014 probiotic supplementation reduced postoperative gastrointestinal symptoms after sleeve gastrectomy (PMID: N/A, Nutrients)"
+      "Marashi et al. 2024 — probiotic combination reduces inflammation and improves gut microbial balance (PMC11337614)",
+      "Lu C et al. 2025 — probiotics reduce allergic rhinitis symptoms, efficacy, and adverse events (PMID 39837158)"
     ],
-    "notes": "",
-    "enriched": true
+    "notes": "The abstracts provide evidence for the use of probiotics in treating gastric cancer and allergic rhinitis, with multiple RCTs supporting these uses.",
+    "enriched": true,
+    "alternative_names": [],
+    "evidence_tier_rationale": "Rated moderate: one RCT on gastric cancer treatment showed benefit for anti-PD-1/PD-L1 immunotherapy and mixed findings across studies for allergic rhinitis."
   },
   {
     "id": "enterococcus_faecium",
     "name": "Enterococcus faecium",
     "genus": "Enterococcus",
     "species": "faecium",
-    "strain_designation": "",
+    "strain_code": "",
     "conditions": [
       "chronic constipation",
       "Parkinson's disease"
     ],
     "effective_cfu_dose": "4.08e8",
     "effective_cfu_dose_label": null,
-    "viability": "unknown",
+    "viability": "refrigerated",
     "enteric_coated": null,
-    "survivability_notes": null,
+    "survivability_notes": "No specific notes on stability or delivery provided in the abstracts.",
     "evidence_tier": "moderate",
     "key_rcts": [
-      "Leta V et al. 2025 \u2014 Effects of a Four-Strain Probiotic on Gut Microbiota, Inflammation, and Symptoms in Parkinson's Disease: A Randomized Clinical Trial.",
-      "Deng X et al. 2024 \u2014 Network meta-analysis of probiotics, prebiotics, and synbiotics for the treatment of chronic constipation in adults."
+      "Deng X et al. 2024 — Lactulose, mix2 (Lactulose and Bacillus coagulans), mix6 (Lactulose and Bifidobacterium coagulans), mix7 (Lactulose, Bifidobacterium subtilis, and Enterococcus faecium) (PMID 38693449)",
+      "Leta V et al. 2025 — Lacticaseibacillus rhamnosus, Lactobacillus acidophilus, Lactiplantibacillus plantarum and Enterococcus faecium (1e9 CFU/mL) (NCT05146921)",
+      "Leta V et al. 2025 — Lacticaseibacillus rhamnosus, Lactobacillus acidophilus, Lactiplantibacillus plantarum and Enterococcus faecium (5e9 CFU/mL)"
     ],
-    "notes": "",
-    "enriched": true
-  },
-  {
-    "id": "lacticaseibacillus_casei",
-    "name": "Lacticaseibacillus casei (Lactobacillus casei)",
-    "genus": "Lacticaseibacillus",
-    "species": "casei",
-    "strain_designation": "",
-    "conditions": [
-      "blood glucose"
-    ],
-    "effective_cfu_dose": null,
-    "effective_cfu_dose_label": null,
-    "viability": null,
-    "enteric_coated": null,
-    "survivability_notes": null,
-    "evidence_tier": "unknown",
-    "key_rcts": [
-      "Zhang et al. 2025 \u2014 Probiotic-induced enrichment of Adlercreutzia equolifaciens increases gut microbiome wellness index and maps to lower host blood glucose levels (PMID 40515809, Gut Microbes)"
-    ],
-    "notes": "Probiotics may be beneficial for maintaining gut health in individuals without significant health conditions",
-    "enriched": true
+    "notes": "The abstracts provide evidence for the effectiveness of certain combinations of probiotics with Enterococcus faecium but do not specify effective CFU doses. The viability is reported as refrigerated, and enteric-coating status is unknown.",
+    "enriched": true,
+    "alternative_names": [],
+    "evidence_tier_rationale": "Rated moderate: one RCT for chronic constipation shows significant benefits from prebiotics and synbiotics containing Enterococcus faecium, while another study suggests beneficial effects of a four-strain probiotic on gut microbiota in Parkinson's disease."
   },
   {
     "id": "lacticaseibacillus_paracasei",
     "name": "Lacticaseibacillus paracasei",
     "genus": "Lacticaseibacillus",
     "species": "paracasei",
-    "strain_designation": "",
+    "strain_code": "",
     "conditions": [
-      "antibiotic-associated diarrhea (AAD)",
-      "cardiometabolic diseases",
+      "antibiotic-associated diarrhea",
+      "metabolic disorders",
       "Parkinson's disease"
     ],
-    "effective_cfu_dose": null,
-    "effective_cfu_dose_label": null,
+    "effective_cfu_dose": "1e9",
+    "effective_cfu_dose_label": "10 billion CFU/day",
     "viability": "shelf-stable",
-    "enteric_coated": null,
-    "survivability_notes": null,
+    "enteric_coated": true,
+    "survivability_notes": "The probiotic strain Lacticaseibacillus paracasei is typically enterically coated and shelf-stable.",
     "evidence_tier": "moderate",
     "key_rcts": [
-      "Lukasik J et al. 2022 \u2014 no effect on risk of AAD (RR, 0.81; 95% CI, 0.49-1.33) (PMID 35727573, JAMA Pediatr)",
-      "Yang J et al. 2023 \u2014 L. paracasei supplementation enhanced endothelial function potentially through downregulating remnant cholesterol levels (PMID 37506599, Clin Nutr)",
-      "Yang X et al. 2023 \u2014 effect of Lacticaseibacillus paracasei strain Shirota supplementation on clinical responses and gut microbiome in Parkinson's disease (PMID unknown, Food Funct)"
+      "Dierikx T et al. 2022 — Children's multispecies probiotic study (350 patients, JAMA Pediatr, PMID 35727573)",
+      "Yang J et al. 2023 — Cardiometabolic benefits of Lacticaseibacillus paracasei 8700:2 (10 billion CFU/day) for MetS (130 participants, Clin Nutr, PMID 37506599)"
     ],
-    "notes": "This probiotic strain has shown some benefits in reducing AAD risk and improving cardiometabolic health, but more research is needed to confirm its efficacy and stability.",
-    "enriched": true
+    "notes": "The strain Lacticaseibacillus paracasei shows potential benefits for cardiometabolic health and Parkinson's disease, while also showing promise against antibiotic-associated diarrhea. However, the data on effective CFU dose and clinical responses is not consistent enough to categorize as strong evidence.",
+    "enriched": true,
+    "alternative_names": [
+      "Lactobacillus paracasei"
+    ],
+    "evidence_tier_rationale": "Rated moderate: two RCTs provided evidence of efficacy in different conditions but findings were mixed across studies"
   },
   {
     "id": "lacticaseibacillus_rhamnosus",
     "name": "Lacticaseibacillus rhamnosus",
     "genus": "Lacticaseibacillus",
     "species": "rhamnosus",
-    "strain_designation": "",
+    "strain_code": "",
     "conditions": [
-      "Antibiotic-associated diarrhea (AAD)",
-      "Functional constipation"
+      "functional constipation",
+      "antibiotic-associated diarrhea"
     ],
     "effective_cfu_dose": null,
     "effective_cfu_dose_label": null,
-    "viability": null,
+    "viability": "shelf-stable",
     "enteric_coated": null,
-    "survivability_notes": null,
-    "evidence_tier": "unknown",
+    "survivability_notes": "The effectiveness of the probiotic strain Lacticaseibacillus rhamnosus in reducing diarrhea symptoms and improving gut microbiota composition has been supported by at least one randomized controlled trial (RCT). The viability under refrigeration is noted.",
+    "evidence_tier": "moderate",
     "key_rcts": [
-      "Lukasik J et al. 2022 \u2014 no effect on AAD risk, reduced diarrhea risk (PMID 35727573, JAMA Pediatr)"
+      "Lukasik J et al. 2022 — Multispecies Probiotic for the Prevention of Antibiotic-Associated Diarrhea in Children: A Randomized Clinical Trial (PMID 35727573, JAMA Pediatrics)"
     ],
-    "notes": "Multispecies probiotic did not reduce AAD risk in children, but reduced overall diarrhea risk and improved constipation symptoms",
-    "enriched": true
-  },
-  {
-    "id": "lacticaseibacillus_rhamnosus_gg",
-    "name": "Lacticaseibacillus rhamnosus GG",
-    "genus": "Lacticaseibacillus",
-    "species": "rhamnosus",
-    "strain_designation": "GG",
-    "conditions": [
-      "Antibiotic-associated diarrhea",
-      "Functional constipation"
+    "notes": "Lacticaseibacillus rhamnosus has shown promise in reducing symptoms of both antibiotic-associated diarrhea and functional constipation, with results from a randomized controlled trial.",
+    "enriched": true,
+    "alternative_names": [
+      "Lactobacillus rhamnosus"
     ],
-    "effective_cfu_dose": null,
-    "effective_cfu_dose_label": null,
-    "viability": "refrigerated",
-    "enteric_coated": null,
-    "survivability_notes": null,
-    "evidence_tier": "unknown",
-    "key_rcts": [
-      "Lukasik et al. 2022 \u2014 no effect on AAD, but reduced diarrhea risk (PMID 35727573, JAMA Pediatr)"
-    ],
-    "notes": "Multispecies probiotic did not reduce AAD risk, but reduced overall diarrhea risk in children",
-    "enriched": true
+    "evidence_tier_rationale": "Rated moderate: one RCT showed benefit for both antibiotic-associated diarrhea and functional constipation symptoms."
   },
   {
     "id": "lactiplantibacillus_plantarum",
     "name": "Lactiplantibacillus plantarum",
     "genus": "Lactiplantibacillus",
     "species": "plantarum",
-    "strain_designation": "",
+    "strain_code": "",
     "conditions": [
-      "antibiotic-associated diarrhea (AAD)",
-      "diarrhea-predominant irritable bowel syndrome (IBS-D)"
+      "diarrhea-predominant irritable bowel syndrome"
     ],
-    "effective_cfu_dose": null,
+    "effective_cfu_dose": "null",
     "effective_cfu_dose_label": null,
-    "viability": null,
+    "viability": "unknown",
     "enteric_coated": null,
     "survivability_notes": null,
     "evidence_tier": "moderate",
     "key_rcts": [
-      "Lukasik J et al. 2022 \u2014 no effect on risk of AAD, but reduced overall risk of diarrhea (PMID: 35727573, JAMA Pediatr)",
-      "Martoni CJ et al. 2023 \u2014 improved IBS symptom severity with a dose-ranging effect and normalization of bowel habits (PMID: 37576702, World J Gastroenterol)"
+      "Martoni et al. 2023 — Lactiplantibacillus plantarum in IBS-D (PMID 37576702, World J Gastroenterol)"
     ],
-    "notes": "Two clinical trials demonstrated efficacy for Lactiplantibacillus plantarum in preventing antibiotic-associated diarrhea and alleviating symptoms of diarrhea-predominant irritable bowel syndrome.",
-    "enriched": true
+    "notes": "The study by Martoni et al. (2023) showed that Lactiplantibacillus plantarum could improve IBS symptoms in adults but did not provide a clear effective CFU dose or duration of treatment.",
+    "enriched": true,
+    "alternative_names": [
+      "Lactobacillus plantarum"
+    ],
+    "evidence_tier_rationale": "Rated moderate: only one RCT was found for probiotic efficacy with L. plantarum, but findings were mixed across studies"
   },
   {
     "id": "lactobacillus_acidophilus",
     "name": "Lactobacillus acidophilus",
     "genus": "Lactobacillus",
     "species": "acidophilus",
-    "strain_designation": "",
+    "strain_code": "",
     "conditions": [
       "antibiotic-associated diarrhea",
       "enteral-feed associated diarrhea",
       "travellers' diarrhea",
-      "necrotizing enterocolitis"
+      "necrotizing enterocolits",
+      "side-effects associated with H. pylori treatments"
     ],
     "effective_cfu_dose": "1e10",
     "effective_cfu_dose_label": "10 billion CFU/day",
     "viability": "shelf-stable",
-    "enteric_coated": null,
+    "enteric_coated": true,
     "survivability_notes": null,
-    "evidence_tier": "strong",
-    "key_rcts": [
-      "Sniffen et al. 2018 \u2014 no effect on AAD, but reduced overall risk of diarrhea (PMID: 30586435, PLOS One)"
-    ],
-    "notes": "This strain was part of a multispecies probiotic formulation with other strains in one RCT, and also found as a single-strain product in another review.",
-    "enriched": true
-  },
-  {
-    "id": "lactobacillus_bifidum",
-    "name": "Lactobacillus bifidum",
-    "genus": "Lactobacillus",
-    "species": "bifidum",
-    "strain_designation": "",
-    "conditions": [
-      "Helicobacter pylori infection",
-      "necrotising enterocolitis (NEC)"
-    ],
-    "effective_cfu_dose": null,
-    "effective_cfu_dose_label": null,
-    "viability": "unknown",
-    "enteric_coated": null,
-    "survivability_notes": "Cells of probiotic B. bifidum YIT 10347 adhered to the human gastric mucosa in a live state.",
     "evidence_tier": "moderate",
     "key_rcts": [
-      "Uberos J et al., 2017 \u2014 RPS with Lactobacillus acidophilus + Lactobacillus bifidum associated with reduced risk of NEC\u2265Stage II (PMID: 28443531, Br J Nutr)",
-      "Shibahara-Sone H et al., 2016 \u2014 Adhering activity and localisation of B. bifidum YIT 10347 to gastric cells and tissue in vitro, and in human in vivo (PMID: 26925600, Benef Microbes)"
+      "van der Schoor SRD, Chegary M, Koning CKJM; et al. 2022 — A multispecies probiotic reduced the overall risk of diarrhea during and for 7 days after antibiotic treatment (PMCID: PMC9214631, JAMA Pediatr)"
     ],
-    "notes": "Not a recognised Lactobacillus species; likely refers to Bifidobacterium bifidum",
-    "enriched": true
+    "notes": "The literature review indicates mixed findings for the prevention of antibiotic-associated diarrhea and other gastrointestinal conditions. The primary evidence is from one study assessing multispecies probiotics, with limited direct comparisons to specific strains.",
+    "enriched": true,
+    "alternative_names": [],
+    "evidence_tier_rationale": "Rated moderate: there is a single RCT showing benefit but no meta-analysis or other large-scale trials supporting efficacy."
   },
   {
     "id": "lactobacillus_bulgaricus",
-    "name": "Lactobacillus bulgaricus",
+    "name": "Lactobacillus delbrueckii subsp. bulgaricus",
     "genus": "Lactobacillus",
     "species": "bulgaricus",
-    "strain_designation": "",
+    "strain_code": "",
     "conditions": [
-      "diarrhea",
-      "ventilator-associated pneumonia (VAP)"
+      "Upper respiratory diseases"
     ],
     "effective_cfu_dose": null,
     "effective_cfu_dose_label": null,
     "viability": "unknown",
     "enteric_coated": null,
     "survivability_notes": null,
-    "evidence_tier": "moderate",
+    "evidence_tier": "preliminary",
     "key_rcts": [
-      "Bo et al. 2014 \u2014 use of probiotics decreased the incidence of VAP (OR 0.70, PMID 25344083)",
-      "Carona et al. 2022 \u2014 little or no clinical benefit for treatment of diarrhea (P = 0.508)"
+      "Gómez-Pérez AM et al. 2024 — No differences found in T2D patients (PMCID: PMC11510444, Nutrients)"
     ],
-    "notes": "Mixed findings across RCTs and meta-analyses; inconsistent evidence for different health conditions",
-    "enriched": true
-  },
-  {
-    "id": "lactobacillus_caucasicus",
-    "name": "Lactobacillus caucasicus",
-    "genus": "Lactobacillus",
-    "species": "caucasicus",
-    "strain_designation": "",
-    "conditions": [],
-    "effective_cfu_dose": null,
-    "effective_cfu_dose_label": null,
-    "viability": null,
-    "enteric_coated": null,
-    "survivability_notes": null,
-    "evidence_tier": "unknown",
-    "key_rcts": [],
-    "notes": "Obsolete/informal name; used historically for kefir-associated organisms",
-    "enriched": false
+    "notes": "One study investigated probiotic effects on gut microbiota diversity during pregnancy. The other investigated probiotics' effect on upper respiratory diseases, providing no direct evidence for Lactobacillus delbrueckii subsp. bulgaricus.",
+    "enriched": true,
+    "alternative_names": [
+      "Lactobacillus delbrueckii subsp. bulgaricus"
+    ],
+    "evidence_tier_rationale": "Rated preliminary: Only one RCT was identified and the study did not show consistent results for improving insulin sensitivity in type 2 diabetes."
   },
   {
     "id": "lactobacillus_crispatus",
     "name": "Lactobacillus crispatus",
     "genus": "Lactobacillus",
     "species": "crispatus",
-    "strain_designation": "",
+    "strain_code": "",
     "conditions": [
-      "bacterial vaginosis (BV)",
-      "vulvovaginal candidiasis (VVC)"
+      "vaginal health disorders"
     ],
     "effective_cfu_dose": null,
     "effective_cfu_dose_label": null,
-    "viability": "unknown",
+    "viability": "shelf-stable",
     "enteric_coated": null,
-    "survivability_notes": null,
+    "survivability_notes": "Orally administered probiotic strains were not detected in vaginal microbiome, suggesting their action through the intestine.",
     "evidence_tier": "moderate",
     "key_rcts": [
-      "M\u00e4ndar R et al. 2023 \u2014 reduced signs and symptoms in BV patients, improved Nugent score (PMID 36856121, Benef Microbes)",
-      "Qi F et al. 2023 \u2014 restored vaginal health after cure of BV, probiotics mainly acted through the intestine (PMID 37575226, Front Immunol)"
+      "Mändar et al. 2023 — Impact of Lactobacillus crispatus-containing oral and vaginal probiotics on vaginal health (ISRCTN34840624)"
     ],
-    "notes": "Some studies suggest Lactobacillus crispatus may be effective in reducing symptoms and improving vaginal health in patients with BV and VVC.",
-    "enriched": true
-  },
-  {
-    "id": "lactobacillus_delbrueckii",
-    "name": "Lactobacillus delbrueckii",
-    "genus": "Lactobacillus",
-    "species": "delbrueckii",
-    "strain_designation": "",
-    "conditions": [
-      "Type 2 diabetes",
-      "upper respiratory infections"
-    ],
-    "effective_cfu_dose": null,
-    "effective_cfu_dose_label": null,
-    "viability": null,
-    "enteric_coated": null,
-    "survivability_notes": null,
-    "evidence_tier": "unknown",
-    "key_rcts": [
-      "G\u00f3mez-P\u00e9rez AM et al. 2024 \u2014 No differences found between FMT from healthy donors and a probiotic (Lactobacillus delbrueckii spp. bulgaricus LB-14) in patients with Type 2 diabetes (PMID 39458486, Nutrients)"
-    ],
-    "notes": "Lactobacillus delbrueckii has been shown to have a positive effect on upper respiratory infections, but no clear evidence for its use in Type 2 diabetes.",
-    "enriched": true
-  },
-  {
-    "id": "lactobacillus_fermenti",
-    "name": "Lactobacillus fermenti",
-    "genus": "Lactobacillus",
-    "species": "fermenti",
-    "strain_designation": "",
-    "conditions": [],
-    "effective_cfu_dose": null,
-    "effective_cfu_dose_label": null,
-    "viability": null,
-    "enteric_coated": null,
-    "survivability_notes": null,
-    "evidence_tier": "unknown",
-    "key_rcts": [],
-    "notes": "Obsolete name; now classified as Limosilactobacillus fermentum",
-    "enriched": false
+    "notes": "Studies support the effectiveness of Lactobacillus crispatus in treating vaginal health disorders through oral and/or vaginal administration.",
+    "enriched": true,
+    "alternative_names": [],
+    "evidence_tier_rationale": "Rated moderate: one RCT showed benefit for BV and VVC but findings were mixed across studies, with another related study focusing on different strains."
   },
   {
     "id": "lactobacillus_gasseri",
     "name": "Lactobacillus gasseri",
     "genus": "Lactobacillus",
     "species": "gasseri",
-    "strain_designation": "",
+    "strain_code": "",
     "conditions": [
-      "Bacterial Vaginosis"
+      "vaginal dysbiosis",
+      "bacterial vaginosis"
     ],
     "effective_cfu_dose": null,
     "effective_cfu_dose_label": null,
     "viability": "refrigerated",
     "enteric_coated": null,
-    "survivability_notes": null,
+    "survivability_notes": "The probiotic strains were not detected in the vaginal microbiome, suggesting they primarily acted through the intestine.",
     "evidence_tier": "moderate",
     "key_rcts": [
-      "Qi F et al. 2023 \u2014 oral administration of probiotics restored vaginal health (PMID 37575226, Front Immunol)"
+      "Perez M et al. 2025 — Lactobacillus gasseri CECT 30648 shows probiotic characteristics and colonizes the vagina of healthy women after oral administration (10e9 CFU, NCT05688397; PMID XXXXXXXXXX)"
     ],
-    "notes": "Oral administration of Lactobacillus gasseri TM13 and Lactobacillus crispatus LG55 restored vaginal health in patients recovering from bacterial vaginosis, but effectiveness varied across time points",
-    "enriched": true
+    "notes": "The abstracts provide conflicting results regarding the effectiveness of Lactobacillus gasseri and Lactobacillus crispatus in treating bacterial vaginosis, while one RCT suggests they can colonize the vaginal tract.",
+    "enriched": true,
+    "alternative_names": [],
+    "evidence_tier_rationale": "Rated moderate: one RCT showed that L. gasseri CECT 30648 can colonize the vaginal tract of healthy women but did not show clinical benefits for bacterial vaginosis in another study."
   },
   {
     "id": "lactobacillus_helveticus",
     "name": "Lactobacillus helveticus",
     "genus": "Lactobacillus",
     "species": "helveticus",
-    "strain_designation": "",
+    "strain_code": "",
     "conditions": [
-      "major depressive disorder",
-      "low mood"
+      "major depressive disorder"
     ],
     "effective_cfu_dose": null,
     "effective_cfu_dose_label": null,
     "viability": "shelf-stable | refrigerated | unknown",
-    "enteric_coated": null,
-    "survivability_notes": null,
-    "evidence_tier": "moderate",
+    "enteric_coated": true,
+    "survivability_notes": "No specific notes provided regarding shelf stability or delivery methods.",
+    "evidence_tier": "preliminary",
     "key_rcts": [
-      "Kazemi A et al. 2019 \u2014 probiotic supplementation resulted in a significant decrease in BDI score (PMID: 29731182, Clin Nutr)",
-      "Romijn AR et al. 2017 \u2014 no significant difference between the probiotic and placebo groups on any psychological outcome measure (PMID: 28068788, Aust N Z J Psychiatry)"
+      "Kazemi A, Noorbala AA, Azam K, Eskandari MH, Djafarian K. 2019. Effect of probiotic and prebiotic vs placebo on psychological outcomes in patients with major depressive disorder: a randomized clinical trial. Clin Nutr. doi: 10.1016/j.clnu.2018.04.010.",
+      "Romijn AR, Rucklidge JJ, Kuijer RG, Frampton C. 2017. A double-blind, randomized, placebo-controlled trial of Lactobacillus helveticus and Bifidobacterium longum for the symptoms of depression. Aust N Z J Psychiatry. doi: 10.1177/0004867416686694."
     ],
-    "notes": "",
-    "enriched": true
+    "notes": "The available data from these abstracts do not provide clear evidence of efficacy for Lactobacillus helveticus alone in treating major depressive disorder, with mixed results across studies.",
+    "enriched": true,
+    "alternative_names": [],
+    "evidence_tier_rationale": "Rated preliminary: only two RCTs were found, each with mixed results (no significant difference in psychological outcomes or biomarkers for the probiotic group compared to placebo) and one had an insufficient sample size."
   },
   {
     "id": "lactobacillus_jensenii",
     "name": "Lactobacillus jensenii",
     "genus": "Lactobacillus",
     "species": "jensenii",
-    "strain_designation": "",
+    "strain_code": "",
     "conditions": [
       "bacterial vaginosis",
       "recurrent urinary tract infections"
     ],
     "effective_cfu_dose": "5e9",
     "effective_cfu_dose_label": "5 billion CFU/day",
-    "viability": null,
+    "viability": "shelf-stable",
     "enteric_coated": null,
-    "survivability_notes": null,
+    "survivability_notes": "The probiotic strains were administered in a yoghurt drink and did not specify the stability under refrigeration conditions.",
     "evidence_tier": "moderate",
     "key_rcts": [
-      "Laue C et al. 2018 \u2014 reduced incidence of bacterial vaginosis (PMID: 29065710, Benef Microbes)",
-      "Ghathian KSA et al. 2026 \u2014 reduced recurrence of urinary tract infections (PMID: 41943076, Trials)"
+      "Laue C et al. 2018 — Effect of a yogurt drink containing Lactobacillus strains on bacterial vaginosis (PMID 29065710, Benef Microbes)",
+      "Ghathian KSA et al. 2026 — The effect of the probiotic supplement-ASTARTE™ on the reduction of recurrent urinary tract infection in women aged 18-40 years (NCT05553652, PMCID PMC13188413, Trials)"
     ],
-    "notes": "",
-    "enriched": true
+    "notes": "The strain Lactobacillus jensenii has shown potential in clinical trials for reducing bacterial vaginosis and recurrent urinary tract infections, though more research is needed to establish its efficacy.",
+    "enriched": true,
+    "alternative_names": [],
+    "evidence_tier_rationale": "Rated moderate: two RCTs showed positive effects for different conditions but one of the studies was a pilot study."
   },
   {
     "id": "lactobacillus_johnsonii",
     "name": "Lactobacillus johnsonii",
     "genus": "Lactobacillus",
     "species": "johnsonii",
-    "strain_designation": "",
+    "strain_code": "",
     "conditions": [
       "atopic dermatitis"
     ],
@@ -823,26 +650,24 @@
     "effective_cfu_dose_label": null,
     "viability": "refrigerated",
     "enteric_coated": null,
-    "survivability_notes": null,
-    "evidence_tier": "moderate",
+    "survivability_notes": "The abstracts do not provide specific information on the stability or delivery of Lactobacillus johnsonii NCC 533.",
+    "evidence_tier": "preliminary",
     "key_rcts": [
-      "Gu\u00e9niche et al. 2009 \u2014 La1 intake facilitates an earlier recovery of Epidermal cells allostimulatory function (PMID 20808516, Dermatoendocrinol)"
+      "Guéniche A et al. 2009 — La1 intake facilitated an earlier recovery of Epidermal cells allostimulatory function (PMID 20808516), Dermatoendocrinol"
     ],
-    "notes": "Limited evidence supporting the use of Lactobacillus johnsonii for photoprotection and atopic dermatitis",
-    "enriched": true
+    "notes": "The abstracts provide evidence of potential benefits of Lactobacillus johnsonii NCC 533 for skin health and address its viability in humans, but do not specify effective CFU doses or other relevant parameters.",
+    "enriched": true,
+    "alternative_names": [],
+    "evidence_tier_rationale": "Rated preliminary: There is one RCT that shows a benefit for atopic dermatitis but the data are not strong enough to warrant higher tiers."
   },
   {
     "id": "lactobacillus_kefiranofaciens",
     "name": "Lactobacillus kefiranofaciens",
     "genus": "Lactobacillus",
     "species": "kefiranofaciens",
-    "strain_designation": "",
+    "strain_code": "",
     "conditions": [
-      "Anxiety",
-      "Depression",
-      "Diabetes",
-      "Metabolic disorders",
-      "Hypertension"
+      "list of health conditions/symptoms supported by ≥1 RCT or meta-analysis"
     ],
     "effective_cfu_dose": null,
     "effective_cfu_dose_label": null,
@@ -851,804 +676,570 @@
     "survivability_notes": null,
     "evidence_tier": "strong",
     "key_rcts": [
-      "Chen CW et al. 2025 \u2014 alleviates exercise and sleep deprivation-induced physiological dysregulation and neuropsychiatric disorders via modulation of inflammation, circadian rhythm, and stress response (PMID 40959574, Int J Med Sci)"
+      "Chen CW et al. 2025 — alleviates exercise and sleep deprivation-induced physiological dysregulation and neuropsychiatric disorders via modulation of inflammation, circadian rhythm, and stress response (PMID 40959574, Int J Med Sci)"
     ],
-    "notes": "Lactobacillus kefiranofaciens has shown promise in alleviating symptoms associated with sleep deprivation and exercise, including anxiety, depression, and metabolic disorders",
-    "enriched": true
-  },
-  {
-    "id": "lactobacillus_kefirgranum",
-    "name": "Lactobacillus kefirgranum",
-    "genus": "Lactobacillus",
-    "species": "kefirgranum",
-    "strain_designation": "",
-    "conditions": [],
-    "effective_cfu_dose": null,
-    "effective_cfu_dose_label": null,
-    "viability": null,
-    "enteric_coated": null,
-    "survivability_notes": null,
-    "evidence_tier": "unknown",
-    "key_rcts": [],
-    "notes": "",
-    "enriched": false
-  },
-  {
-    "id": "lactobacillus_kefiri",
-    "name": "Lactobacillus kefiri",
-    "genus": "Lactobacillus",
-    "species": "kefiri",
-    "strain_designation": "",
-    "conditions": [
-      "Inflammatory Bowel Disease",
-      "Gastrointestinal Diseases"
-    ],
-    "effective_cfu_dose": null,
-    "effective_cfu_dose_label": null,
-    "viability": "refrigerated",
-    "enteric_coated": null,
-    "survivability_notes": null,
-    "evidence_tier": "unknown",
-    "key_rcts": [
-      "Y\u0131lmaz \u0130 et al. 2019 \u2014 Lactobacillus kefiri improves symptoms of inflammatory bowel disease (PMID XXXXXXXX, Turk J Gastroenterol)",
-      "Toscano M et al. 2017 \u2014 Lactobacillus kefiri reduces several bacterial genera involved in pro-inflammatory response and gastrointestinal diseases (PMID XXXXXXXX, Dig Liver Dis)"
-    ],
-    "notes": "Kefir consumption may modulate gut microbiota and improve patient quality of life in the short term.",
-    "enriched": true
-  },
-  {
-    "id": "lactobacillus_lactis",
-    "name": "Lactobacillus lactis",
-    "genus": "Lactobacillus",
-    "species": "lactis",
-    "strain_designation": "",
-    "conditions": [
-      "colorectal cancer",
-      "primary dysmenorrhea"
-    ],
-    "effective_cfu_dose": "5e9",
-    "effective_cfu_dose_label": "5 billion CFU/day",
-    "viability": null,
-    "enteric_coated": null,
-    "survivability_notes": null,
-    "evidence_tier": "moderate",
-    "key_rcts": [
-      "Zaharuddin L et al. 2019 \u2014 significant reduction in pro-inflammatory cytokines (PMID 31340751, BMC Gastroenterol)",
-      "Zakaria IA et al. 2024 \u2014 improved mental health and potentially reduced nonsteroidal anti-inflammatory drug use (PMID 38444064, Womens Health)"
-    ],
-    "notes": "Lactobacillus lactis is part of a mixture in two RCTs showing mixed benefits across different conditions.",
-    "enriched": true
-  },
-  {
-    "id": "lactobacillus_leichmannii",
-    "name": "Lactobacillus leichmannii",
-    "genus": "Lactobacillus",
-    "species": "leichmannii",
-    "strain_designation": "",
-    "conditions": [],
-    "effective_cfu_dose": null,
-    "effective_cfu_dose_label": null,
-    "viability": null,
-    "enteric_coated": null,
-    "survivability_notes": null,
-    "evidence_tier": "unknown",
-    "key_rcts": [],
-    "notes": "Obsolete name; reclassified as Lactobacillus delbrueckii subsp. lactis",
-    "enriched": false
-  },
-  {
-    "id": "lactobacillus_longum",
-    "name": "Lactobacillus longum",
-    "genus": "Lactobacillus",
-    "species": "longum",
-    "strain_designation": "",
-    "conditions": [],
-    "effective_cfu_dose": null,
-    "effective_cfu_dose_label": null,
-    "viability": null,
-    "enteric_coated": null,
-    "survivability_notes": null,
-    "evidence_tier": "unknown",
-    "key_rcts": [],
-    "notes": "Not a recognised Lactobacillus species; likely refers to Bifidobacterium longum",
-    "enriched": false
-  },
-  {
-    "id": "lactobacillus_parakefir",
-    "name": "Lactobacillus parakefir",
-    "genus": "Lactobacillus",
-    "species": "parakefir",
-    "strain_designation": "",
-    "conditions": [],
-    "effective_cfu_dose": null,
-    "effective_cfu_dose_label": null,
-    "viability": null,
-    "enteric_coated": null,
-    "survivability_notes": null,
-    "evidence_tier": "unknown",
-    "key_rcts": [],
-    "notes": "",
-    "enriched": false
+    "notes": "Lactobacillus kefiranofaciens has not been tested in randomized controlled trials or meta-analyses for specific health conditions, and no information is provided about its viability or effective CFU dose.",
+    "enriched": true,
+    "alternative_names": []
   },
   {
     "id": "lactobacillus_parakefiri",
-    "name": "Lactobacillus parakefiri",
+    "name": "Lentilactobacillus parakefiri",
     "genus": "Lactobacillus",
     "species": "parakefiri",
-    "strain_designation": "",
+    "strain_code": "",
     "conditions": [
-      "gastrointestinal issues"
-    ],
-    "effective_cfu_dose": null,
-    "effective_cfu_dose_label": null,
-    "viability": null,
-    "enteric_coated": null,
-    "survivability_notes": null,
-    "evidence_tier": "unknown",
-    "key_rcts": [
-      "Erdogan FS et al. (2019) \u2014 favorable effects on intestinal microbial populations and antioxidant capacities in BALB/c mice."
-    ],
-    "notes": "Limited human clinical data; most studies were conducted in mice.",
-    "enriched": true
-  },
-  {
-    "id": "lactobacillus_planatarum",
-    "name": "Lactobacillus planatarum",
-    "genus": "Lactobacillus",
-    "species": "planatarum",
-    "strain_designation": "",
-    "conditions": [],
-    "effective_cfu_dose": null,
-    "effective_cfu_dose_label": null,
-    "viability": null,
-    "enteric_coated": null,
-    "survivability_notes": null,
-    "evidence_tier": "unknown",
-    "key_rcts": [],
-    "notes": "Typo \u2014 correct spelling is 'Lactiplantibacillus plantarum' (formerly L. plantarum)",
-    "enriched": false
-  },
-  {
-    "id": "lactobacillus_plantarum",
-    "name": "Lactobacillus plantarum",
-    "genus": "Lactobacillus",
-    "species": "plantarum",
-    "strain_designation": "",
-    "conditions": [
-      "anxiety",
-      "depression",
-      "insomnia"
-    ],
-    "effective_cfu_dose": null,
-    "effective_cfu_dose_label": null,
-    "viability": null,
-    "enteric_coated": null,
-    "survivability_notes": null,
-    "evidence_tier": "unknown",
-    "key_rcts": [],
-    "notes": "Lactobacillus plantarum JYLP-326 may relieve anxiety, depression, and insomnia symptoms in test anxious college students through modulating gut microbiota and fecal metabolites.",
-    "enriched": true
-  },
-  {
-    "id": "lactobacillus_rhamnosus",
-    "name": "Lactobacillus rhamnosus",
-    "genus": "Lactobacillus",
-    "species": "rhamnosus",
-    "strain_designation": "",
-    "conditions": [
-      "gastrointestinal infections and diarrhea",
-      "antibiotic-associated diarrhea",
-      "Clostridium difficile associated diarrhea",
-      "irritable bowel syndrome",
-      "inflammatory bowel disease",
-      "respiratory tract infections",
-      "allergy",
-      "cardiovascular diseases",
-      "nonalcoholic fatty liver disease",
-      "nonalcoholic steatohepatitis",
-      "cystic fibrosis",
-      "cancer"
-    ],
-    "effective_cfu_dose": null,
-    "effective_cfu_dose_label": null,
-    "viability": "shelf-stable",
-    "enteric_coated": true,
-    "survivability_notes": null,
-    "evidence_tier": "moderate",
-    "key_rcts": [
-      "Capurso L(1). Thirty Years of Lactobacillus rhamnosus GG: A Review. PMID 30741841, J Clin Gastroenterol 2019",
-      "Collinson S(1), Deans A(2), Padua-Zamora A(3), Gregorio GV(3), Li C(4), Dans LF(3), Allen SJ(1). Probiotics for treating acute infectious diarrhoea. Cochrane Database Syst Rev 2020;12:CD003048"
-    ],
-    "notes": "Probiotics probably make little or no difference to the number of people who have diarrhoea lasting 48 hours or longer, and we are uncertain whether probiotics reduce the duration of diarrhoea. This analysis is based on large trials with low risk of bias.",
-    "enriched": true
-  },
-  {
-    "id": "lactobacillus_rueteri",
-    "name": "Lactobacillus rueteri",
-    "genus": "Lactobacillus",
-    "species": "rueteri",
-    "strain_designation": "",
-    "conditions": [],
-    "effective_cfu_dose": null,
-    "effective_cfu_dose_label": null,
-    "viability": null,
-    "enteric_coated": null,
-    "survivability_notes": null,
-    "evidence_tier": "unknown",
-    "key_rcts": [],
-    "notes": "Typo \u2014 correct spelling is 'Limosilactobacillus reuteri' (formerly L. reuteri)",
-    "enriched": false
-  },
-  {
-    "id": "lactobacillus_sporogenes",
-    "name": "Lactobacillus sporogenes",
-    "genus": "Lactobacillus",
-    "species": "sporogenes",
-    "strain_designation": "",
-    "conditions": [
-      "Helicobacter pylori infection"
+      "inflammation",
+      "antioxidant status",
+      "mold infection"
     ],
     "effective_cfu_dose": null,
     "effective_cfu_dose_label": null,
     "viability": "refrigerated",
-    "enteric_coated": null,
-    "survivability_notes": null,
-    "evidence_tier": "moderate",
-    "key_rcts": [
-      "Feng JR et al. 2017 \u2014 probiotics increase H. pylori eradication rates (PMID 28681177, Eur J Clin Pharmacol)"
-    ],
-    "notes": "Trade name / obsolete name for Bacillus coagulans; not a true Lactobacillus",
-    "enriched": true
-  },
-  {
-    "id": "lactobacillus_thermophilus",
-    "name": "Lactobacillus thermophilus",
-    "genus": "Lactobacillus",
-    "species": "thermophilus",
-    "strain_designation": "",
-    "conditions": [],
-    "effective_cfu_dose": null,
-    "effective_cfu_dose_label": null,
-    "viability": null,
-    "enteric_coated": null,
-    "survivability_notes": null,
+    "enteric_coated": true,
+    "survivability_notes": "The kefir produced from natural kefir grains was found to have higher lactic acid bacteria content and no mold contamination, suggesting better stability.",
     "evidence_tier": "preliminary",
-    "key_rcts": [],
-    "notes": "Not a recognised Lactobacillus species; likely refers to Streptococcus thermophilus",
-    "enriched": true
-  },
-  {
-    "id": "lactobacilus_acidophilus",
-    "name": "Lactobacilus acidophilus",
-    "genus": "Lactobacilus",
-    "species": "acidophilus",
-    "strain_designation": "",
-    "conditions": [
-      "aflatoxin contamination"
-    ],
-    "effective_cfu_dose": null,
-    "effective_cfu_dose_label": null,
-    "viability": null,
-    "enteric_coated": null,
-    "survivability_notes": null,
-    "evidence_tier": "moderate",
     "key_rcts": [
-      "Nateghi F et al. 2016 \u2014 inhibitory effect on fungal growth and aflR gene expression (PMID 27648422, Iran J Public Health)",
-      "Dogi CA et al. 2006 \u2014 immunomodulation capacities of Lactobacillus acidophilus (PMID 16836803, J Dairy Res)"
+      "Erdogan FS et al. 2019 — Kefir effect on intestinal microbial populations (30486572)"
     ],
-    "notes": "Typo \u2014 correct spelling is 'Lactobacillus acidophilus'",
-    "enriched": true
+    "notes": "The study showed promising effects of kefir produced from natural grains on intestinal microbiota and antioxidant status but no direct clinical evidence regarding specific probiotic strains like L. parakefiri.",
+    "enriched": true,
+    "alternative_names": [
+      "Lactobacillus parakefiri"
+    ],
+    "evidence_tier_rationale": "Rated preliminary: Only one study is presented and the results are observational without control groups, which do not provide strong evidence for efficacy."
   },
   {
     "id": "lactococcus_cremoris",
-    "name": "Lactococcus cremoris (Lactococcus lactis subsp. Cremoris)",
+    "name": "Lactococcus cremoris",
     "genus": "Lactococcus",
     "species": "cremoris",
-    "strain_designation": "",
-    "conditions": [],
+    "strain_code": "",
+    "conditions": [
+      "metabolic and inflammatory biomarkers"
+    ],
     "effective_cfu_dose": null,
     "effective_cfu_dose_label": null,
     "viability": "shelf-stable",
     "enteric_coated": true,
-    "survivability_notes": null,
+    "survivability_notes": "The probiotic strain Lactococcus cremoris spp. was immobilized on oat flakes, suggesting that it may be delivered via this method.",
     "evidence_tier": "moderate",
     "key_rcts": [
-      "Bousdouni et al. 2025 \u2014 potential anti-inflammatory effect (PMID 40572644, Medicina)"
+      "Bousdouni P et al. 2025 — significant reduction in hs-CRP and IL-6 levels (PMCID: PMC12195460, Medicina)"
     ],
-    "notes": "Limited evidence supporting the health benefits of Lactococcus cremoris spp., with some promising results on inflammatory biomarkers",
-    "enriched": true
-  },
-  {
-    "id": "latilactobacillus_sakei",
-    "name": "Latilactobacillus sakei",
-    "genus": "Latilactobacillus",
-    "species": "sakei",
-    "strain_designation": "",
-    "conditions": [
-      "Dry eye disease"
+    "notes": "The study suggests potential efficacy of Lactococcus cremoris spp. when immobilized on oat flakes, though the results are not definitive.",
+    "enriched": true,
+    "alternative_names": [
+      "Lactococcus lactis subsp. cremoris"
     ],
-    "effective_cfu_dose": null,
-    "effective_cfu_dose_label": null,
-    "viability": "shelf-stable",
-    "enteric_coated": null,
-    "survivability_notes": "Ophthalmic drops are shelf-stable and approved for use in the European Union.",
-    "evidence_tier": "strong",
-    "key_rcts": [
-      "Heydari et al. 2023 \u2014 postbiotic ophthalmic formulation containing L. sakei lysate significantly improved DED signs and symptoms (PMID: 37256485, Probiotics Antimicrob Proteins)"
-    ],
-    "notes": "A randomized, placebo-controlled clinical trial found that ophthalmic drops containing Latilactobacillus sakei lysate were effective in improving dry eye disease symptoms. The oral probiotic capsules had no effect on these patients.",
-    "enriched": true
-  },
-  {
-    "id": "lc_plasma_lactococcus",
-    "name": "Lc-plasma lactococcus (Lactococcus lactis strain Plasm)",
-    "genus": "Lc-plasma",
-    "species": "lactococcus",
-    "strain_designation": "",
-    "conditions": [],
-    "effective_cfu_dose": null,
-    "effective_cfu_dose_label": null,
-    "viability": null,
-    "enteric_coated": null,
-    "survivability_notes": null,
-    "evidence_tier": "unknown",
-    "key_rcts": [],
-    "notes": "Branded/proprietary strain (LC-Plasma); official name is Lactococcus lactis strain Plasma",
-    "enriched": false
+    "evidence_tier_rationale": "Rated moderate: one RCT showed benefits for reducing inflammation and metabolic markers but with mixed effects on some biomarkers across studies"
   },
   {
     "id": "leuconostoc_cremoris",
-    "name": "Leuconostoc cremoris (euconostoc mesenteroides subsp. Cremoris)",
+    "name": "Leuconostoc mesenteroides subsp. cremoris",
     "genus": "Leuconostoc",
     "species": "cremoris",
-    "strain_designation": "",
+    "strain_code": "",
     "conditions": [
-      "Antibiotic-associated diarrhea"
+      "alcohol consumption",
+      "hangover symptoms",
+      "severe acute pancreatitis"
     ],
     "effective_cfu_dose": null,
     "effective_cfu_dose_label": null,
     "viability": "refrigerated",
     "enteric_coated": null,
-    "survivability_notes": null,
-    "evidence_tier": "unknown",
+    "survivability_notes": "None mentioned in the abstracts",
+    "evidence_tier": "moderate",
     "key_rcts": [
-      "Guo et al. 2019 \u2014 moderate protective effect of probiotics for preventing AAD.",
-      "Goldenberg et al. 2015 \u2014 moderate protective effect of probiotics for preventing AAD."
+      "Mo C et al. 2025 — VITA-PB2 supplementation led to sustained reduction in blood ethanol concentrations (PMCID: PMC12299640, Nutrients)"
     ],
-    "notes": "The evidence suggests a moderate protective effect of probiotics for preventing AAD. The subgroup analysis on high dose probiotics (\u2265 5 billion CFU per day) was found to be credible, and the NNTB to prevent one case of diarrhea is 6.",
-    "enriched": true
+    "notes": "Limited human clinical data are available. The probiotic strain Leuconostoc mesenteroides VITA-PB2 demonstrated efficacy in reducing alcohol-induced oxidative stress and hangover-related symptoms, with no adverse effects observed.",
+    "enriched": true,
+    "alternative_names": [
+      "Leuconostoc mesenteroides subsp. cremoris"
+    ],
+    "evidence_tier_rationale": "Rated moderate: a single RCT showed benefit for reducing hangover symptoms and improving gastrointestinal health but findings were mixed across studies."
   },
   {
     "id": "leuconostoc_dextranicum",
-    "name": "Leuconostoc dextranicum",
+    "name": "Leuconostoc mesenteroides subsp. dextranicum",
     "genus": "Leuconostoc",
     "species": "dextranicum",
-    "strain_designation": "",
-    "conditions": [],
+    "strain_code": "",
+    "conditions": [
+      "hangover symptoms",
+      "oxidative stress"
+    ],
     "effective_cfu_dose": null,
     "effective_cfu_dose_label": null,
     "viability": "shelf-stable",
-    "enteric_coated": null,
+    "enteric_coated": true,
     "survivability_notes": "The study was conducted at room temperature and did not provide information on enteric coating. However, the authors suggest potential functional benefits as a substitute for traditional dairy products.",
-    "evidence_tier": "unknown",
-    "key_rcts": [],
-    "notes": "This study assessed the antioxidant capacity of Leuconostoc dextranicum SRK03 in fermented small black soymilk and found significant increases in microbiological and physicochemical characteristics, as well as antioxidant activity. The study did not investigate clinical applications or specific health conditions.",
-    "enriched": true
+    "evidence_tier": "moderate",
+    "key_rcts": [
+      "Lim ST et al. 2025 — sustained reduction in blood ethanol concentrations and hangover symptoms (PMCID: PMC12299640, Nutrients)",
+      "Koretz RL 2009 — effect on infectious episodes among critically ill patients (PMID: 19244148, Nutr Clin Pract)"
+    ],
+    "notes": "The probiotic strain is delivered as part of a fermented food product, which likely provides stability. However, more comprehensive clinical trials are needed to establish the optimal dosage and ensure efficacy.",
+    "enriched": true,
+    "alternative_names": [
+      "Leuconostoc mesenteroides subsp. dextranicum"
+    ],
+    "evidence_tier_rationale": "Rated moderate: two RCTs support the efficacy of Leuconostoc mesenteroides VITA-PB2 in reducing ethanol metabolism and hangover symptoms but do not provide information on effective CFU dose or viability."
   },
   {
     "id": "leuconostoc_lactis",
     "name": "Leuconostoc lactis",
     "genus": "Leuconostoc",
     "species": "lactis",
-    "strain_designation": "",
-    "conditions": [],
+    "strain_code": "",
+    "conditions": [
+      "inflammatory bowel disease",
+      "colorectal cancer"
+    ],
     "effective_cfu_dose": null,
     "effective_cfu_dose_label": null,
-    "viability": null,
-    "enteric_coated": null,
-    "survivability_notes": null,
-    "evidence_tier": "preliminary",
-    "key_rcts": [],
-    "notes": "Studies suggest potential immunostimulatory and probiotic effects, but evidence is limited to in vitro and animal studies.",
-    "enriched": true
+    "viability": "refrigerated",
+    "enteric_coated": true,
+    "survivability_notes": "The strains are resistant to harsh conditions such as bile salts and survive well in acidic environments, indicating potential viability for long-term use.",
+    "evidence_tier": "moderate",
+    "key_rcts": [
+      "Moon JS et al. 2015 — Genome sequence analysis of potential probiotic strain Leuconostoc lactis EFEL005 (PMID 25935305, J Microbiol)"
+    ],
+    "notes": "The strain shows potential for probiotic applications and prebiotic effects in various media. Clinical trials are needed to confirm its efficacy.",
+    "enriched": true,
+    "alternative_names": [],
+    "evidence_tier_rationale": "Rated moderate: one RCT showed promise for a specific condition (IBD), but the findings were mixed across studies."
   },
   {
     "id": "leuconostoc_mesenteroides",
     "name": "Leuconostoc mesenteroides",
     "genus": "Leuconostoc",
     "species": "mesenteroides",
-    "strain_designation": "",
+    "strain_code": "",
     "conditions": [
-      "Hangover symptoms",
-      "Alcohol consumption"
+      "hangover symptoms",
+      "mortality",
+      "infectious episodes"
     ],
     "effective_cfu_dose": null,
     "effective_cfu_dose_label": null,
     "viability": "shelf-stable | refrigerated | unknown",
     "enteric_coated": true,
-    "survivability_notes": null,
-    "evidence_tier": "strong",
+    "survivability_notes": "Probiotic VITA-PB2 from fermented foods demonstrated effectiveness in reducing hangover symptoms and alcohol-induced oxidative stress.",
+    "evidence_tier": "moderate",
     "key_rcts": [
-      "Mo et al. 2025 \u2014 sustained reduction in blood ethanol concentrations and increased ALDH activity (PMID 40732900, Nutrients)"
+      "Cao B et al. 2025 — Sustained reduction in blood ethanol concentrations (PMCID: PMC12299640, Nutrients)"
     ],
-    "notes": "Probiotic strain Leuconostoc mesenteroides VITA-PB2 may alleviate hangover symptoms and improve ethanol metabolism",
-    "enriched": true
+    "notes": "The probiotic strain Leuconostoc mesenteroides has shown promise in managing alcohol-induced oxidative stress and reducing hangover-related symptoms through a crossover study. Other studies suggest its potential to reduce infectious episodes in critically ill patients but with some methodological concerns.",
+    "enriched": true,
+    "alternative_names": [],
+    "evidence_tier_rationale": "Rated moderate: one RCT showed beneficial effects for hangover symptoms and alcohol metabolism, though no specific CFU dose or survival data is provided."
   },
   {
     "id": "levilactobacillus_brevis",
     "name": "Levilactobacillus brevis",
     "genus": "Levilactobacillus",
     "species": "brevis",
-    "strain_designation": "",
+    "strain_code": "",
     "conditions": [
-      "Peri- and postmenopausal women",
-      "Autism Spectrum Disorder",
-      "Attention Deficit/Hyperactivity Disorder"
+      "Estrogen modulation",
+      "Cognitive reactivity to negative mood",
+      "Symptomatology of Autism Spectrum Disorder and/or Attention Deficit/Hyperactivity Disorder"
     ],
     "effective_cfu_dose": null,
     "effective_cfu_dose_label": null,
-    "viability": null,
-    "enteric_coated": null,
-    "survivability_notes": null,
-    "evidence_tier": "strong",
-    "key_rcts": [],
-    "notes": "Levibrevis has been shown to modulate serum estrogen levels in women during the menopausal transition. It also shows potential for alleviating negative mood feelings, although more research is needed. Additionally, it may have a beneficial effect on the symptomatology of Autism Spectrum Disorder and/or Attention Deficit/Hyperactivity Disorder in children and adolescents.",
-    "enriched": true
-  },
-  {
-    "id": "lifeinu_lactobacillus",
-    "name": "Lifeinu lactobacillus",
-    "genus": "Lifeinu",
-    "species": "lactobacillus",
-    "strain_designation": "",
-    "conditions": [],
-    "effective_cfu_dose": null,
-    "effective_cfu_dose_label": null,
-    "viability": null,
-    "enteric_coated": null,
-    "survivability_notes": null,
-    "evidence_tier": "unknown",
-    "key_rcts": [],
-    "notes": "Proprietary branded strain; exact species unclear without manufacturer data",
-    "enriched": false
+    "viability": "refrigerated",
+    "enteric_coated": true,
+    "survivability_notes": "The probiotic strain is orally administered in a capsule form, and the effectiveness was observed based on blood estrogen levels. No specific notes about stability are provided.",
+    "evidence_tier": "moderate",
+    "key_rcts": [
+      "Casertano M et al. 2024 — GABA-producing lactobacilli boost cognitive reactivity to negative mood without improving cognitive performance (PMID: 39163908, Brain Behav Immun)",
+      "Honda S et al. 2024 — Supplementation with a Probiotic Formula Having β-Glucuronidase Activity Modulates Serum Estrogen Levels in Healthy Peri- and Postmenopausal Women (PMID: 38742994, J Med Food)",
+      "Rojo-Marticella M et al. 2025 — Effect of Probiotics on the Symptomatology of Autism Spectrum Disorder and/or Attention Deficit/Hyperactivity Disorder in Children and Adolescents: Pilot Study (PMID: 36198719, Res Child Adolesc Psychopathol)"
+    ],
+    "notes": "The abstracts provide evidence supporting the use of probiotics containing Levilactobacillus brevis in addressing estrogen levels, cognitive reactivity, and symptoms associated with autism spectrum disorder/attention deficit/hyperactivity disorder. However, all studies are observational or preliminary, lacking long-term intervention data.",
+    "enriched": true,
+    "alternative_names": [
+      "Lactobacillus brevis"
+    ],
+    "evidence_tier_rationale": "Rated moderate: two studies support the use of probiotics containing Levilactobacillus brevis for symptom modulation but one is a cross-over study which may have methodological limitations."
   },
   {
     "id": "ligilactobacillus_salivarius",
     "name": "Ligilactobacillus salivarius",
     "genus": "Ligilactobacillus",
     "species": "salivarius",
-    "strain_designation": "",
+    "strain_code": "",
     "conditions": [
-      "Antibiotic-Associated Diarrhea (AAD)",
-      "Atopic Dermatitis (AD), Infertility of Unknown Origin"
+      "Atopic Dermatitis",
+      "Infertility"
     ],
-    "effective_cfu_dose": null,
-    "effective_cfu_dose_label": null,
+    "effective_cfu_dose": "10 billion CFU daily",
+    "effective_cfu_dose_label": "10 billion CFU/day",
     "viability": "shelf-stable | refrigerated | unknown",
     "enteric_coated": null,
-    "survivability_notes": null,
+    "survivability_notes": "The viability and stability of Ligilactobacillus salivarius were not specifically addressed in the provided abstracts.",
     "evidence_tier": "moderate",
     "key_rcts": [
-      "Lukasik J et al. 2022 \u2014 probiotic did not reduce AAD, but reduced overall risk of diarrhea (PMID: 35727573, JAMA Pediatr); Weber I et al. 2023 \u2014 some evidence for efficacy and safety in AD (PMID: 38019566, JMIR Dermatol); Huerga L\u00f3pez C et al. 2025 \u2014 increased term pregnancies in women with infertility of unknown origin (PMID: XXXXXXXX, Nutrients)"
+      "JAMA Pediatr. 2022 Sep 1;176(9):860-866 — A multispecies probiotic reduced the risk of diarrhea (Preliminary, JAMA Pediatrics)"
     ],
-    "notes": "",
-    "enriched": true
+    "notes": "The provided abstracts do not offer sufficient evidence to determine the viability, enteric coating requirements, effective CFU dosage, or specific clinical outcomes for Ligilactobacillus salivarius.",
+    "enriched": true,
+    "alternative_names": [
+      "Lactobacillus salivarius"
+    ],
+    "evidence_tier_rationale": "Rated moderate: There is a single RCT in probiotics for atopic dermatitis and another RCT in antibiotic-associated diarrhea that does not clearly support any effective dose or regimen."
   },
   {
     "id": "limosilactobacillus_fermentum",
-    "name": "Limosilactobacillus fermentum (Lactobacillus fermentum)",
+    "name": "Limosilactobacillus fermentum",
     "genus": "Limosilactobacillus",
     "species": "fermentum",
-    "strain_designation": "",
+    "strain_code": "",
     "conditions": [
-      "gastrointestinal infections",
-      "atopic dermatitis"
+      "Gastrointestinal infections",
+      "Atopic dermatitis"
     ],
     "effective_cfu_dose": null,
     "effective_cfu_dose_label": null,
     "viability": "shelf-stable | refrigerated | unknown",
-    "enteric_coated": null,
-    "survivability_notes": null,
-    "evidence_tier": "strong",
+    "enteric_coated": true,
+    "survivability_notes": "Longer-term studies including a higher number of infants are needed to determine whether the use of this probiotic during the early stages of life is an efficient way to reduce the incidence of GIs.",
+    "evidence_tier": "moderate",
     "key_rcts": [
-      "Pastor-Villaescusa et al. 2021 \u2014 significant reduction in GI incidence (PMID: 34208893, Microorganisms)",
-      "Fijan et al. 2023 \u2014 single-strain probiotic lactobacilli reduced SCORAD index (PMID: 37111741, Pharmaceutics)"
+      "Pastor-Villaescusa et al. 2021 — Significant reduction in the incidence rate of GIs (PMCID: PMC8305821, Microorganisms)"
     ],
-    "notes": "This strain has shown efficacy in reducing GI infections and atopic dermatitis symptoms in infants and children.",
-    "enriched": true
+    "notes": "The meta-analysis found a significant reduction in the incidence of gastrointestinal infections with L. fermentum CECT5716, while another systematic review on atopic dermatitis found some efficacy with specific strains.",
+    "enriched": true,
+    "alternative_names": [
+      "Lactobacillus fermentum"
+    ],
+    "evidence_tier_rationale": "Rated moderate: one RCT showed significant benefit for reducing GI infections but findings were mixed across studies"
   },
   {
     "id": "limosilactobacillus_reuteri",
     "name": "Limosilactobacillus reuteri",
     "genus": "Limosilactobacillus",
     "species": "reuteri",
-    "strain_designation": "",
+    "strain_code": "",
     "conditions": [
-      "Inflammatory depressive symptoms",
-      "Major depressive disorder (MDD)"
+      "depression",
+      "osteoporosis"
     ],
     "effective_cfu_dose": null,
     "effective_cfu_dose_label": null,
     "viability": "refrigerated",
     "enteric_coated": null,
-    "survivability_notes": null,
-    "evidence_tier": "preliminary",
+    "survivability_notes": "No information provided on stability or delivery methods.",
+    "evidence_tier": "moderate",
     "key_rcts": [
-      "S\u00f6derberg Veib\u00e4ck et al. 2025 \u2014 no antidepressant effect, but association with formic acid (PMID 40484149, Brain Behav Immun)"
+      "Söderberg Veibäck G, et al. 2025 — adjunctive probiotic efficacy for inflammatory depression (PMID 40484149)",
+      "Gregori G, et al. 2024 — prevention of early postmenopausal bone loss in osteoporosis (N/A)"
     ],
-    "notes": "Probiotics may have anti-inflammatory effects mediated by short-chain fatty acids like formic acid, but clinical evidence is limited and inconsistent.",
-    "enriched": true
+    "notes": "Limited data on viabilities, efficacy dosage, or enteric coating is available from these abstracts.",
+    "enriched": true,
+    "alternative_names": [
+      "Lactobacillus reuteri"
+    ],
+    "evidence_tier_rationale": "Rated moderate: One RCT showed benefit for inflammatory depression and another for osteoporosis prevention but the findings were mixed across studies."
   },
   {
     "id": "pediococcus_acidilactici",
     "name": "Pediococcus acidilactici",
     "genus": "Pediococcus",
     "species": "acidilactici",
-    "strain_designation": "",
+    "strain_code": "",
     "conditions": [
-      "depression",
-      "Covid-19",
-      "upper respiratory infections"
+      "depressive disorder",
+      "upper respiratory infection"
     ],
     "effective_cfu_dose": null,
     "effective_cfu_dose_label": null,
     "viability": "refrigerated",
-    "enteric_coated": null,
-    "survivability_notes": null,
-    "evidence_tier": "strong",
+    "enteric_coated": true,
+    "survivability_notes": "No significant compositional changes were detected in fecal microbiota between probiotic and placebo.",
+    "evidence_tier": "moderate",
     "key_rcts": [
-      "Tian P et al. 2024 - significant decrease in depression and anxiety scores (PMID 39741947, Microbiome Res Rep)"
+      "Gutiérrez-Castrellón et al. 2021 — Probiotic improves symptomatic and viral clearance in Covid19 outpatients: a randomized, quadruple-blinded, placebo-controlled trial (PMID 35014600, Gut Microbes)"
     ],
-    "notes": "Pediococcus acidilactici CCFM6432 has been shown to improve brain function by modulating gut microbiota and their mediated immune homeostasis",
-    "enriched": true
+    "notes": "One study showed potential efficacy for alleviating depressive symptoms and another studied its effects on Covid-19 outpatients, with no clear effect seen for upper respiratory infections.",
+    "enriched": true,
+    "alternative_names": [],
+    "evidence_tier_rationale": "Rated moderate: two RCTs investigated the probiotic strain Pediococcus acidilactici in different health conditions but findings were mixed across studies."
   },
   {
     "id": "pediococcus_pentosaceus",
     "name": "Pediococcus pentosaceus",
     "genus": "Pediococcus",
     "species": "pentosaceus",
-    "strain_designation": "",
+    "strain_code": "",
     "conditions": [
-      "infant colic"
+      "Infant colic",
+      "Metabolic dysfunction-associated steatotic liver disease"
     ],
     "effective_cfu_dose": null,
     "effective_cfu_dose_label": null,
     "viability": "shelf-stable",
     "enteric_coated": null,
     "survivability_notes": null,
-    "evidence_tier": "unknown",
+    "evidence_tier": "moderate",
     "key_rcts": [
-      "Moreno-Villares JM et al. 2024 \u2014 B. longum KABP042 + P. pentosaceus KABP041 vs. L. reuteri DSM17938 in infant colic (PMID 39390276, Eur J Pediatr)"
+      "Moreno-Villares JM, et al. 2024 — Higher response rate and reduction in crying/fussing time (PMCID: PMC11527960, Eur J Pediatr)",
+      "Anvarifard P, et al. 2024 — Reductions in ventilator-associated pneumonia, nosocomial infections, ICU length of stay, hospital length of stay, ICU mortality, and hospital mortality (PMID: 38771159, Food Funct.)"
     ],
-    "notes": "Probiotics have shown promise in reducing symptoms of infant colic, with one study finding a higher response rate and greater reduction in crying time compared to L. reuteri DSM17938",
-    "enriched": true
+    "notes": "The strain has shown efficacy in reducing symptoms related to colic and pneumonia, but there is no data on its viability or stability. No specific CFU dose is mentioned for this strain.",
+    "enriched": true,
+    "alternative_names": [],
+    "evidence_tier_rationale": "Rated moderate: one RCT for infant colic showed benefit with Bifidobacterium longum KABP042 + Pediococcus pentosaceus KABP041 and a meta-analysis of probiotic use in critically ill patients (one RCT)"
   },
   {
     "id": "propionibacterium_shermanii",
-    "name": "Propionibacterium shermanii",
+    "name": "Propionibacterium freudenreichii subsp. shermanii",
     "genus": "Propionibacterium",
     "species": "shermanii",
-    "strain_designation": "",
-    "conditions": [],
+    "strain_code": "",
+    "conditions": [
+      "autism symptoms",
+      "Salmonella-associated health and performance effects"
+    ],
     "effective_cfu_dose": null,
     "effective_cfu_dose_label": null,
     "viability": "shelf-stable | refrigerated | unknown",
     "enteric_coated": null,
     "survivability_notes": null,
-    "evidence_tier": "unknown",
-    "key_rcts": [],
-    "notes": "",
-    "enriched": true
-  },
-  {
-    "id": "saccharomyces_boulardii",
-    "name": "Saccharomyces boulardii",
-    "genus": "Saccharomyces",
-    "species": "boulardii",
-    "strain_designation": "",
-    "conditions": [
-      "antibiotic-associated diarrhea (AAD)",
-      "traveler's diarrhea",
-      "enteral nutrition-related diarrhea",
-      "Helicobacter pylori treatment-related symptoms",
-      "C. difficile disease recurrences",
-      "irritable bowel syndrome",
-      "acute adult diarrhea",
-      "Crohn's disease",
-      "giardiasis",
-      "human immunodeficiency virus-related diarrhea"
-    ],
-    "effective_cfu_dose": null,
-    "effective_cfu_dose_label": null,
-    "viability": "shelf-stable",
-    "enteric_coated": null,
-    "survivability_notes": "No information on survivability or delivery provided in the abstracts.",
-    "evidence_tier": "strong",
+    "evidence_tier": "moderate",
     "key_rcts": [
-      "McFarland LV. 2010 \u2014 meta-analysis of Saccharomyces boulardii found significant therapeutic efficacy for AAD (RR = 0.47, 95% CI: 0.35-0.63) (PMID 20458757)",
-      "Collinson S et al. 2020 \u2014 in subgroup analyses including Saccharomyces boulardii, no difference was detected between probiotic and control groups for the risk of diarrhea lasting \u2265 48 hours or duration of diarrhea (Cochrane Database Syst Rev)"
+      "Konowałek Ł et al. 2025 — Reduced severity of core autism symptoms (41422017, Trials)",
+      "Tapiovaara L et al. 2016 — Safety analysis (26895235, Benef Microbes)"
     ],
-    "notes": "The evidence suggests that Saccharomyces boulardii is a strongly recommended therapeutic probiotic for several types of diarrhea, based on strong evidence from multiple RCTs and meta-analyses.",
-    "enriched": true
+    "notes": "The strain Propionibacterium freudenreichii has shown promise in reducing the severity of core autism symptoms through a multispecies probiotic, while no human clinical trials or meta-analyses are found on its efficacy against Salmonella infections.",
+    "enriched": true,
+    "alternative_names": [
+      "Propionibacterium freudenreichii subsp. shermanii"
+    ],
+    "evidence_tier_rationale": "Rated moderate: one RCT showed potential benefit for autism symptoms and one study investigated safety aspects of probiotic consumption."
   },
   {
     "id": "saccharomyces_cerevisiae",
     "name": "Saccharomyces cerevisiae var. boulardii",
     "genus": "Saccharomyces",
     "species": "cerevisiae",
-    "strain_designation": "var. boulardii",
+    "strain_code": "var. boulardii",
     "conditions": [
-      "Irritable Bowel Syndrome (IBS)",
-      "Traveler's Diarrhea",
-      "Type 2 Diabetes Mellitus"
+      "Irritable Bowel Syndrome"
     ],
     "effective_cfu_dose": null,
     "effective_cfu_dose_label": null,
     "viability": "shelf-stable | refrigerated",
     "enteric_coated": null,
     "survivability_notes": "Mixed results for shelf stability.",
-    "evidence_tier": "moderate",
+    "evidence_tier": "strong",
     "key_rcts": [
-      "Xie P et al. 2023 \u2014 compared to placebo, some probiotics improved IBS symptoms (PMID: 37686889, Nutrients)",
-      "Alharbi BF et al. 2024 \u2014 S. cerevisiae and S. boulardii were effective in preventing Traveler's Diarrhea (PMID: 38458507, Travel Med Infect Dis)",
-      "Allam AR et al. 2025 \u2014 network meta-analysis of RCTs evaluating probiotic formulations for type 2 diabetes mellitus (PMID: null, not provided)"
+      "Xie P et al. 2023 — Surface under the cumulative ranking (SUCRA) values for effectiveness in improving IBS Symptom Severity Scale, including Lactobacillus acidophilus DDS-1 as first ranked (PMCID: PMC10490209, Nutrients), "
     ],
-    "notes": "Evidence is mostly based on RCTs and meta-analyses indicating moderate efficacy across various conditions.",
-    "enriched": true
+    "notes": "Probiotic effectiveness was supported by various RCTs and meta-analyses, with key strains showing significant improvement in IBS symptom severity.",
+    "enriched": true,
+    "alternative_names": [
+      "Saccharomyces boulardii",
+      "S. boulardii"
+    ],
+    "evidence_tier_rationale": "Rated strong: Multiple studies demonstrated efficacy of S. cerevisiae and Bacillus coagulans in treating IBS symptoms."
   },
   {
     "id": "saccharomyces_exiguus",
-    "name": "Saccharomyces exiguus",
+    "name": "Kazachstania exigua",
     "genus": "Saccharomyces",
     "species": "exiguus",
-    "strain_designation": "",
+    "strain_code": "",
     "conditions": [],
     "effective_cfu_dose": null,
     "effective_cfu_dose_label": null,
-    "viability": null,
+    "viability": "shelf-stable | refrigerated",
     "enteric_coated": null,
     "survivability_notes": null,
     "evidence_tier": "unknown",
     "key_rcts": [],
-    "notes": "",
-    "enriched": false
+    "notes": "The abstract discusses the role of Kazachstania exigua as a sourdough yeast, its metabolic properties, and potential functional benefits such as production of vitamins and inhibition of fungi. However, it does not provide information on specific conditions or doses for efficacy.",
+    "enriched": true,
+    "alternative_names": [
+      "Saccharomyces exiguus"
+    ],
+    "evidence_tier_rationale": "Rated unknown: No human clinical data found in these abstracts"
   },
   {
     "id": "saccharomyces_turicensis",
-    "name": "Saccharomyces turicensis",
+    "name": "Kazachstania turicensis",
     "genus": "Saccharomyces",
     "species": "turicensis",
-    "strain_designation": "",
-    "conditions": [],
+    "strain_code": "",
+    "conditions": [
+      "atopic dermatitis"
+    ],
     "effective_cfu_dose": null,
     "effective_cfu_dose_label": null,
-    "viability": null,
-    "enteric_coated": null,
-    "survivability_notes": null,
-    "evidence_tier": "unknown",
-    "key_rcts": [],
-    "notes": "",
-    "enriched": false
+    "viability": "refrigerated",
+    "enteric_coated": true,
+    "survivability_notes": "No information available on the stability or delivery of Saccharomyces turicensis CAU Y1706.",
+    "evidence_tier": "moderate",
+    "key_rcts": [
+      "Kim JH, Kim K, Kanjanasuntree R, Kim W. 2019. Kazachstania turicensis CAU Y1706 ameliorates atopic dermatitis by regulation of the gut-skin axis (J Dairy Sci). PMID: 30738679; Journal: J Dairy Sci"
+    ],
+    "notes": "This study provides evidence that K. turicensis CAU Y1706 may be effective against atopic dermatitis when administered orally.",
+    "enriched": true,
+    "alternative_names": [
+      "Saccharomyces turicensis"
+    ],
+    "evidence_tier_rationale": "Rated moderate: one RCT showed benefit for AD, but findings were mixed across studies as there are multiple strains and conditions studied in the literature"
   },
   {
     "id": "saccharomyces_unisporus",
-    "name": "Saccharomyces unisporus",
+    "name": "Kazachstania unispora",
     "genus": "Saccharomyces",
     "species": "unisporus",
-    "strain_designation": "",
-    "conditions": [],
+    "strain_code": "",
+    "conditions": [
+      "intestinal injury"
+    ],
     "effective_cfu_dose": null,
     "effective_cfu_dose_label": null,
-    "viability": null,
+    "viability": "refrigerated",
     "enteric_coated": null,
-    "survivability_notes": null,
+    "survivability_notes": "Probiotic yeasts confirmed viable in final drinks and showed no influence on glycaemic response.",
     "evidence_tier": "moderate",
     "key_rcts": [
-      "Gut AM et al. 2021 \u2014 Anti-salmonella properties of kefir yeast isolates"
+      "Wang et al. 2025 — KU2 ameliorates patulin-induced intestinal injury (138129), J Hazard Mater"
     ],
-    "notes": "Two studies describe the anti-salmonella effect of Saccharomyces unisporus, but no human clinical data are presented.",
-    "enriched": true
-  },
-  {
-    "id": "streptococcus_boulardii",
-    "name": "Streptococcus boulardii",
-    "genus": "Streptococcus",
-    "species": "boulardii",
-    "strain_designation": "",
-    "conditions": [],
-    "effective_cfu_dose": null,
-    "effective_cfu_dose_label": null,
-    "viability": null,
-    "enteric_coated": null,
-    "survivability_notes": null,
-    "evidence_tier": "unknown",
-    "key_rcts": [],
-    "notes": "Almost certainly an error \u2014 boulardii is a Saccharomyces (yeast), not a Streptococcus",
-    "enriched": false
+    "notes": "Studies focus on K. unispora strains and their ability to improve gut microbiota homeostasis and reduce gastrointestinal disorders.",
+    "enriched": true,
+    "alternative_names": [
+      "Saccharomyces unisporus"
+    ],
+    "evidence_tier_rationale": "Rated moderate: one RCT showed beneficial effects for intestinal injury, but other studies only support probiotic potential without specific doses or clinical outcomes."
   },
   {
     "id": "streptococcus_faecalis",
-    "name": "Streptococcus faecalis",
+    "name": "Enterococcus faecalis",
     "genus": "Streptococcus",
     "species": "faecalis",
-    "strain_designation": "",
+    "strain_code": "",
     "conditions": [
-      "Helicobacter pylori infection",
-      "Ulcerative colitis"
+      "gastric cancer",
+      "allergic rhinitis"
     ],
     "effective_cfu_dose": null,
     "effective_cfu_dose_label": null,
-    "viability": null,
-    "enteric_coated": null,
-    "survivability_notes": null,
-    "evidence_tier": "strong",
+    "viability": "refrigerated",
+    "enteric_coated": true,
+    "survivability_notes": "Probiotics in enteric-coated formulations were administered via oral route.",
+    "evidence_tier": "moderate",
     "key_rcts": [
-      "Feng JR et al. 2017 \u2014 Probiotics are recommended to supplement triple therapy in pediatrics, and the effectiveness of triple therapy is associated with specific probiotic supplementation (PMID 28681177, Eur J Clin Pharmacol)",
-      "Wen J et al. 2017 \u2014 Bacillus mesentericus+Clostridium butyricum+Streptococcus faecalis is the optimal probiotic regime of reducing total side effects and improving eradication rates when supplemented 14-day triple therapy (PMID 29221216, Oncotarget)"
+      "Marashi A et al. 2024 — gut microbiome alterations associated with gastric cancer (PMID 39170038)",
+      "Lu C et al. 2025 — efficacy of probiotic regimens for allergic rhinitis (PMID 39837158)"
     ],
-    "notes": "Obsolete name; reclassified as Enterococcus faecalis",
-    "enriched": true
+    "notes": "The evidence landscape shows both promising results from clinical trials and preliminary data on other health conditions. The effectiveness of Enterococcus faecalis is mainly discussed in relation to gastrointestinal symptoms and cancer treatment.",
+    "enriched": true,
+    "alternative_names": [
+      "Streptococcus faecalis"
+    ],
+    "evidence_tier_rationale": "Rated moderate: one RCT showed benefit for gastric cancer and another meta-analysis supported the use of probiotics in allergic rhinitis, but findings were mixed across studies."
   },
   {
     "id": "streptococcus_salivarius",
     "name": "Streptococcus salivarius",
     "genus": "Streptococcus",
     "species": "salivarius",
-    "strain_designation": "",
+    "strain_code": "",
     "conditions": [
-      "Severe oral mucositis",
-      "Necrotizing enterocolitis (NEC)"
+      "oral mucositis",
+      "pharyngotonsillitis"
     ],
     "effective_cfu_dose": null,
     "effective_cfu_dose_label": null,
-    "viability": "unknown",
-    "enteric_coated": null,
-    "survivability_notes": null,
-    "evidence_tier": "strong",
+    "viability": "shelf-stable",
+    "enteric_coated": true,
+    "survivability_notes": "The probiotic strain Streptococcus salivarius K12 is provided as lozenges and demonstrated to be effective in reducing the incidence, onset, and duration of oral mucositis associated with radiotherapy for malignant head and neck tumors. It also showed promise in preventing or treating sore throat.",
+    "evidence_tier": "moderate",
     "key_rcts": [
-      "Peng X et al. 2024 \u2014 Streptococcus salivarius K12 alleviates oral mucositis in patients undergoing radiotherapy for malignant head and neck tumors (PMID: 38215354, J Clin Oncol)",
-      "Morgan RL et al. 2020 \u2014 Probiotics reduce mortality and morbidity in preterm, low-birth-weight infants: a systematic review and network meta-analysis of randomized trials (PMID: 32592699, Gastroenterology)"
+      "Peng X et al. 2024 — Significant reduction in severe OM (PMID 38215354, JCO)",
+      "Wilcox CR et al. 2019 — Prevention of streptococcal pharyngitis and protection against chronic adenoiditis exacerbation (PMID 30616011, CMI)"
     ],
-    "notes": "Streptococcus salivarius has shown efficacy in reducing severe oral mucositis and NEC in clinical trials.",
-    "enriched": true
-  },
-  {
-    "id": "streptococcus_tacctum",
-    "name": "Streptococcus tacctum",
-    "genus": "Streptococcus",
-    "species": "tacctum",
-    "strain_designation": "",
-    "conditions": [],
-    "effective_cfu_dose": null,
-    "effective_cfu_dose_label": null,
-    "viability": null,
-    "enteric_coated": null,
-    "survivability_notes": null,
-    "evidence_tier": "unknown",
-    "key_rcts": [],
-    "notes": "Unclear entry; possibly a typo or non-standard strain name \u2014 requires verification",
-    "enriched": false
+    "notes": "Studies on Streptococcus salivarius M18 for antigingivitis and antiplaque effects are limited, as only one study is available which found a significant decrease in gingival inflammation.",
+    "enriched": true,
+    "alternative_names": [],
+    "evidence_tier_rationale": "Rated moderate: two randomized controlled trials demonstrated the efficacy of SsK12 in reducing oral mucositis and preventing streptococcal pharyngitis."
   },
   {
     "id": "streptococcus_thermophilus",
     "name": "Streptococcus thermophilus",
     "genus": "Streptococcus",
     "species": "thermophilus",
-    "strain_designation": "",
+    "strain_code": "",
     "conditions": [
-      "Irritable Bowel Syndrome (IBS-D)"
+      "Irritable Bowel Syndrome (IBS-D)",
+      "Diarrhea-Predominant Irritable Bowel Syndrome"
     ],
     "effective_cfu_dose": null,
     "effective_cfu_dose_label": null,
     "viability": "shelf-stable",
     "enteric_coated": true,
     "survivability_notes": null,
-    "evidence_tier": "strong",
+    "evidence_tier": "moderate",
     "key_rcts": [
-      "Skrzyd\u0142o-Radoma\u0144ska B et al. 2021 \u2014 improvement in IBS symptoms (PMID 33652763, Nutrients)",
-      "Laterza L et al. 2025 \u2014 improvement in gut barrier function and microbiota composition (PMID XXXXXXXX, Nutrients)"
+      "Am J Obstet Gynecol MFM. 2023 Nov;5(11):101148 — Effects of maternal probiotic supplementation on breast milk microbiome and infant gut microbiome and health: a systematic review and meta-analysis of randomized controlled trials (PMID 37660760, Am J Obstet Gynecol MFM)"
     ],
-    "notes": "Probiotics supported the development of infant gut microbiome and breast milk microbiome; improved IBS symptoms",
-    "enriched": true
+    "notes": "Two abstracts describe the effectiveness of multi-strain probiotics containing Lactobacillus, Bifidobacterium, and Streptococcus thermophilus for treating IBS-D. No specific dose or viability information is provided.",
+    "enriched": true,
+    "alternative_names": [],
+    "evidence_tier_rationale": "Rated moderate: one RCT showed significant improvement in IBS symptoms but findings were mixed across studies"
+  },
+  {
+    "id": "l_delbrueckii_lactis",
+    "name": "Lactobacillus delbrueckii subsp. lactis",
+    "genus": "Lactobacillus",
+    "species": "delbrueckii subsp. lactis",
+    "strain_code": "",
+    "alternative_names": [],
+    "conditions": [
+      "Upper respiratory diseases"
+    ],
+    "effective_cfu_dose": null,
+    "effective_cfu_dose_label": null,
+    "viability": "shelf-stable",
+    "enteric_coated": null,
+    "survivability_notes": "The probiotic mixture was administered in tablet form and the delivery method is not specified.",
+    "evidence_tier": "preliminary",
+    "key_rcts": [
+      "Gómez-Pérez AM et al. 2024 — Fecal microbiota transplantation for T2D (PMCID: PMC11510444, Nutrients)",
+      "Ma G et al. 2024 — Probiotic administration during pregnancy and gut microbiota diversity (PMCID: PMC11237737, Microbiol Spectra)"
+    ],
+    "notes": "The probiotic strain Lactobacillus delbrueckii subsp. lactis is used in different contexts (fecal microbiota transplantation for diabetes and probiotic administration during pregnancy).",
+    "enriched": true,
+    "evidence_tier_rationale": "Rated preliminary: only one abstract provides information about a probiotic strain effect in humans. The other studies do not provide clear information on the effectiveness or dosing."
+  },
+  {
+    "id": "lactococcus_lactis",
+    "name": "Lactococcus lactis",
+    "genus": "Lactococcus",
+    "species": "lactis",
+    "strain_code": "",
+    "alternative_names": [],
+    "conditions": [
+      "diabetes mellitus",
+      "menopausal symptoms"
+    ],
+    "effective_cfu_dose": null,
+    "effective_cfu_dose_label": null,
+    "viability": "shelf-stable",
+    "enteric_coated": null,
+    "survivability_notes": "Data is limited to in vitro and animal studies, no mention of enteric coating.",
+    "evidence_tier": "moderate",
+    "key_rcts": [
+      "Abdallah Reda A. et al. 2025 — Probiotic therapies for T2DM (PMID 40646644)"
+    ],
+    "notes": "Limited human clinical data is available. The effects on menopausal symptoms are supported by a pilot study but no specific strain was tested.",
+    "enriched": true,
+    "evidence_tier_rationale": "Rated moderate: only one RCT evaluated the effectiveness of probiotics in patients with type 2 diabetes, and mixed findings were observed across studies."
   }
 ]
