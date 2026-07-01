@@ -49,7 +49,7 @@ EVIDENCE_TIERS = {"strong", "moderate", "preliminary", "unknown"}
 FILL_ONLY = {"effective_cfu_dose", "effective_cfu_dose_label", "viability",
              "enteric_coated", "survivability_notes"}
 # Fields overwritten even if already populated (when --update is set)
-UPDATE_ALWAYS = {"evidence_tier", "key_rcts", "notes", "conditions"}
+UPDATE_ALWAYS = {"evidence_tier", "evidence_tier_rationale", "key_rcts", "notes", "conditions"}
 
 
 # ── PubMed helpers ─────────────────────────────────────────────────────────────
@@ -140,6 +140,7 @@ Use null for any field where the abstracts provide insufficient evidence.
   "enteric_coated": true | false | null,
   "survivability_notes": "1-2 sentences on stability/delivery, or null",
   "key_rcts": ["Author et al. YEAR — key finding (PMID XXXXXXXX, Journal)"],
+  "evidence_tier_rationale": "1 sentence explaining why this tier was assigned e.g. 'Rated moderate: one RCT showed benefit for IBS but findings were mixed across studies'",
   "notes": "1-2 sentences summarising the evidence landscape for this strain"
 }}
 

@@ -515,6 +515,7 @@ function openDetail(idx) {
     <div class="detail-section">
       <div class="detail-section-title">Evidence</div>
       ${row('Evidence tier', tierBadge(s.evidence_tier))}
+      ${s.evidence_tier_rationale ? `<div class="detail-row"><span class="detail-label"></span><span style="font-size:12px;color:#666;font-style:italic">${s.evidence_tier_rationale}</span></div>` : ''}
       ${row('Effective dose', s.effective_cfu_dose_label)}
       ${s.effective_cfu_dose ? row('Raw dose', `<span class="detail-value mono">${s.effective_cfu_dose}</span>`) : ''}
     </div>
