@@ -61,7 +61,7 @@ def strains(q: Optional[str] = Query(default=None)):
                 s.get("name") or "",
                 s.get("genus") or "",
                 s.get("species") or "",
-                s.get("strain_designation") or "",
+                s.get("strain_code") or "",
                 s.get("evidence_tier") or "",
                 s.get("viability") or "",
                 " ".join(s.get("conditions") or []),
@@ -144,6 +144,10 @@ HTML = """<!DOCTYPE html>
        text-transform: uppercase; letter-spacing: 0.07em; color: #888;
        border-bottom: 1px solid #e5e5e5; white-space: nowrap; cursor: pointer; user-select: none; }
   th:hover { color: #555; }
+  th .sort-arrow { margin-left: 4px; opacity: 0.3; font-style: normal; }
+  th.sort-asc .sort-arrow::after  { content: "↑"; opacity: 1; color: #1a1a1a; }
+  th.sort-desc .sort-arrow::after { content: "↓"; opacity: 1; color: #1a1a1a; }
+  th:not(.sort-asc):not(.sort-desc) .sort-arrow::after { content: "↕"; }
   th.filter-row { padding: 4px 8px; background: #f3f4f6; cursor: default; }
   th.filter-row input, th.filter-row select {
     width: 100%; padding: 4px 7px; border: 1px solid #ddd; border-radius: 5px;
@@ -269,19 +273,19 @@ HTML = """<!DOCTYPE html>
     <table>
       <thead>
         <tr>
-          <th onclick="sortBy('id')">ID</th>
-          <th onclick="sortBy('name')">Name</th>
-          <th>Genus / Species</th>
-          <th onclick="sortBy('evidence_tier')">Evidence</th>
+          <th onclick="sortBy('id')" id="th-id">ID <i class="sort-arrow"></i></th>
+          <th onclick="sortBy('name')" id="th-name">Name <i class="sort-arrow"></i></th>
+          <th onclick="sortBy('strain_code')" id="th-strain_code">Strain Code <i class="sort-arrow"></i></th>
+          <th onclick="sortBy('evidence_tier')" id="th-evidence_tier">Evidence <i class="sort-arrow"></i></th>
           <th>Conditions</th>
-          <th onclick="sortBy('effective_cfu_dose_label')">Effective Dose</th>
-          <th onclick="sortBy('viability')">Viability</th>
+          <th onclick="sortBy('effective_cfu_dose_label')" id="th-effective_cfu_dose_label">Effective Dose <i class="sort-arrow"></i></th>
+          <th onclick="sortBy('viability')" id="th-viability">Viability <i class="sort-arrow"></i></th>
           <th>In DB</th>
         </tr>
         <tr>
           <th class="filter-row"><input id="cf-id"        placeholder="filter…" oninput="applyFilters()"></th>
-          <th class="filter-row"><input id="cf-name"      placeholder="filter…" oninput="applyFilters()"></th>
-          <th class="filter-row"><input id="cf-genus"     placeholder="filter…" oninput="applyFilters()"></th>
+          <th class="filter-row"><input id="cf-name"       placeholder="filter…" oninput="applyFilters()"></th>
+          <th class="filter-row"><input id="cf-strain_code" placeholder="filter…" oninput="applyFilters()"></th>
           <th class="filter-row">
             <select id="cf-tier" onchange="applyFilters()">
               <option value="">all</option>
@@ -376,24 +380,24 @@ function applyFilters(q = document.getElementById('strainsSearch').value.trim())
   if (q) {
     const ql = q.toLowerCase();
     result = result.filter(s => [
-      s.id, s.name, s.genus, s.species, s.strain_designation,
+      s.id, s.name, s.genus, s.species, s.strain_code,
       s.evidence_tier, s.viability, ...(s.conditions || [])
     ].join(' ').toLowerCase().includes(ql));
   }
 
   // Column filters
-  const fId        = colFilter('cf-id');
-  const fName      = colFilter('cf-name');
-  const fGenus     = colFilter('cf-genus');
-  const fTier      = colFilter('cf-tier');
+  const fId         = colFilter('cf-id');
+  const fName       = colFilter('cf-name');
+  const fStrainCode = colFilter('cf-strain_code');
+  const fTier       = colFilter('cf-tier');
   const fCond      = colFilter('cf-conditions');
   const fDose      = colFilter('cf-dose');
   const fViability = colFilter('cf-viability');
   const fInDb      = colFilter('cf-indb');
 
-  if (fId)        result = result.filter(s => (s.id || '').toLowerCase().includes(fId));
-  if (fName)      result = result.filter(s => (s.name || '').toLowerCase().includes(fName));
-  if (fGenus)     result = result.filter(s => [(s.genus || ''), (s.species || '')].join(' ').toLowerCase().includes(fGenus));
+  if (fId)         result = result.filter(s => (s.id || '').toLowerCase().includes(fId));
+  if (fName)       result = result.filter(s => (s.name || '').toLowerCase().includes(fName));
+  if (fStrainCode) result = result.filter(s => (s.strain_code || '').toLowerCase().includes(fStrainCode));
   if (fTier)      result = result.filter(s => (s.evidence_tier || '') === fTier);
   if (fCond)      result = result.filter(s => (s.conditions || []).join(' ').toLowerCase().includes(fCond));
   if (fDose)      result = result.filter(s => (s.effective_cfu_dose_label || '').toLowerCase().includes(fDose));
@@ -402,7 +406,13 @@ function applyFilters(q = document.getElementById('strainsSearch').value.trim())
 
   // Sort
   if (activeSort) {
+    const tierOrder = { strong: 0, moderate: 1, preliminary: 2, unknown: 3 };
     result = [...result].sort((a, b) => {
+      if (activeSort === 'evidence_tier') {
+        const av = tierOrder[a.evidence_tier] ?? 3;
+        const bv = tierOrder[b.evidence_tier] ?? 3;
+        return (av - bv) * sortDir;
+      }
       const av = (a[activeSort] || '').toString().toLowerCase();
       const bv = (b[activeSort] || '').toString().toLowerCase();
       return av < bv ? -sortDir : av > bv ? sortDir : 0;
@@ -428,6 +438,11 @@ function setTierFilter(tier, el) {
 function sortBy(col) {
   if (activeSort === col) sortDir *= -1;
   else { activeSort = col; sortDir = 1; }
+  document.querySelectorAll('th[id^="th-"]').forEach(th => {
+    th.classList.remove('sort-asc', 'sort-desc');
+  });
+  const th = document.getElementById('th-' + col);
+  if (th) th.classList.add(sortDir === 1 ? 'sort-asc' : 'sort-desc');
   applyFilters();
 }
 
@@ -459,7 +474,7 @@ function renderTable() {
     return `<tr onclick="openDetail(${i})">
       <td class="cell-id">${s.id}</td>
       <td class="cell-name">${s.name || '—'}</td>
-      <td class="cell-italic">${s.genus || ''} ${s.species || ''}</td>
+      <td style="font-size:12px;color:#555;white-space:nowrap">${s.strain_code || '—'}</td>
       <td>${tierBadge(s.evidence_tier)}</td>
       <td><div class="chips">${conds || '—'}</div></td>
       <td style="font-size:12px;color:#444;white-space:nowrap">${s.effective_cfu_dose_label || '—'}</td>
@@ -494,7 +509,8 @@ function openDetail(idx) {
       ${row('Full name', s.name)}
       ${row('Genus', s.genus)}
       ${row('Species', s.species)}
-      ${s.strain_designation ? row('Designation', s.strain_designation) : ''}
+      ${s.strain_code ? row('Designation', s.strain_code) : ''}
+      ${(s.alternative_names || []).length ? row('Also known as', `<span style="font-style:italic">${s.alternative_names.join(', ')}</span>`) : ''}
     </div>
     <div class="detail-section">
       <div class="detail-section-title">Evidence</div>

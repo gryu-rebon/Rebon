@@ -154,7 +154,7 @@ Return ONLY valid JSON. No explanation, no markdown fences.
 
 
 def extract_with_llm(strain_name: str, designation: str, abstracts: str, model: str) -> dict | None:
-    llm = OllamaLLM(model=model, format="json")
+    llm = OllamaLLM(model=model, format="json", timeout=200)
     prompt = EXTRACTION_PROMPT.format(
         strain_name=strain_name,
         designation=designation or "unspecified",
@@ -186,7 +186,7 @@ def enrich_strain(
     model: str = DEFAULT_MODEL,
 ) -> dict:
     name = strain.get("name", strain["id"])
-    designation = strain.get("strain_designation") or ""
+    designation = strain.get("strain_code") or ""
     alternative_names = strain.get("alternative_names") or []
     print(f"\n  → {strain['id']}  ({name})")
 

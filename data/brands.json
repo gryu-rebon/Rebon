@@ -1,0 +1,12 @@
+[
+  { "name": "UAS Laboratories LLC", "market_name": "UAS Labs", "parent": "Novonesis Group" },
+  { "name": "Biocodex", "market_name": "Florastor", "parent": null },
+  { "name": "Metagenics Inc.", "market_name": "Metagenics", "parent": null },
+  { "name": "Sabinsa Corporation", "market_name": "Sabinsa", "parent": null, "consumer": false },
+  { "name": "Probi AB", "market_name": "Probi", "parent": null, "consumer": false },
+  { "name": "Pure Encapsulations", "market_name": "Pure Encapsulations", "parent": "Nestlé Health Science" },
+  { "name": "Orthomolecular Products", "market_name": "Orthomolecular Products", "parent": null },
+  { "name": "Now Foods", "market_name": "NOW Foods", "parent": "NOW Health Group" },
+  { "name": "Klaire Labs", "market_name": "Klaire Labs", "parent": "SFI" },
+  { "name": "Seed Health", "market_name": "Seed", "parent": null }
+]
